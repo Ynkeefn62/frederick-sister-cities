@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<template id="__bundler_thumbnail"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="#1C1714"/><rect x="30" y="30" width="40" height="13.3" fill="#1C1714"/><rect x="30" y="43.3" width="40" height="13.3" fill="#A11A1A"/><rect x="30" y="56.6" width="40" height="13.3" fill="#C8972F"/></svg></template>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{background:#F5EFE3;}
+@keyframes fscaFade{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:none;}}
+::selection{background:#C8972F;color:#1C1714;}
+</style>
+</helmet>
+<div style="min-height:100vh;background:#F5EFE3;font-family:'Public Sans',-apple-system,sans-serif;color:#1C1714;">
+
+  <header style="position:sticky;top:0;z-index:50;background:rgba(245,239,227,0.94);backdrop-filter:blur(10px);border-bottom:1px solid #E6DCCB;">
+    <div style="height:4px;display:flex;">
+      <div style="flex:1;background:#1C1714;"></div>
+      <div style="flex:1;background:#A11A1A;"></div>
+      <div style="flex:1;background:#C8972F;"></div>
+    </div>
+    <div style="max-width:1220px;margin:0 auto;padding:13px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;">
+      <button onClick="{{ goHome }}" style="display:flex;align-items:center;gap:13px;background:none;border:none;cursor:pointer;padding:0;text-align:left;">
+        <img src="assets/fsca-logo.png" alt="FSCA logo" style="width:50px;height:50px;object-fit:contain;border-radius:9px;background:#fff;padding:3px;box-shadow:0 1px 2px rgba(28,23,20,0.12);">
+        <span style="display:flex;flex-direction:column;line-height:1.12;">
+          <span style="font-family:'Spectral',serif;font-weight:700;font-size:18px;color:#1C1714;letter-spacing:-0.01em;">Frederick Sister Cities</span>
+          <span style="font-size:10.5px;letter-spacing:0.2em;text-transform:uppercase;color:#9E8B6E;font-weight:600;">Association &middot; Est. 1982</span>
+        </span>
+      </button>
+      <nav style="display:flex;align-items:center;gap:22px;flex-wrap:wrap;">
+        <sc-for list="{{ navItems }}" as="item" hint-placeholder-count="7">
+          <button onClick="{{ item.onClick }}" style="{{ item.style }}">{{ item.label }}</button>
+        </sc-for>
+        <button onClick="{{ goInvolved }}" style="font-family:'Public Sans',sans-serif;font-size:13.5px;font-weight:700;letter-spacing:0.02em;color:#fff;background:#A11A1A;border:none;border-radius:7px;cursor:pointer;padding:10px 18px;box-shadow:0 1px 2px rgba(161,26,26,0.3);">Join Us</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+    <div>
+
+      <section style="position:relative;overflow:hidden;background:#1C1714;">
+        <div style="position:absolute;inset:0;background:repeating-linear-gradient(50deg,#2A231D 0 26px,#241E18 26px 52px);"></div>
+        <div style="position:absolute;inset:0;background:linear-gradient(105deg,rgba(28,23,20,0.97) 0%,rgba(28,23,20,0.86) 46%,rgba(28,23,20,0.55) 100%);"></div>
+        <div style="position:absolute;right:36px;bottom:30px;font-family:monospace;font-size:11px;color:rgba(255,255,255,0.34);letter-spacing:0.04em;">[ photo: Frederick&rsquo;s clustered spires at dusk ]</div>
+        <div style="position:relative;max-width:1220px;margin:0 auto;padding:96px 32px 104px;">
+          <div style="max-width:660px;">
+            <div style="display:flex;align-items:center;gap:12px;margin-bottom:22px;">
+              <div style="width:40px;height:3px;display:flex;border-radius:2px;overflow:hidden;"><div style="flex:1;background:#1C1714;"></div><div style="flex:1;background:#A11A1A;"></div><div style="flex:1;background:#C8972F;"></div></div>
+              <span style="font-size:12px;letter-spacing:0.26em;text-transform:uppercase;color:#E0C77F;font-weight:700;">Willkommen &middot; Welcome</span>
+            </div>
+            <h1 style="font-family:'Spectral',serif;font-weight:700;font-size:58px;line-height:1.04;letter-spacing:-0.02em;color:#FBF6EC;margin:0 0 24px;text-wrap:balance;">A living bridge between Frederick and Germany.</h1>
+            <p style="font-size:18px;line-height:1.65;color:rgba(251,246,236,0.82);margin:0 0 34px;max-width:560px;">For over four decades we have connected the people of Frederick with our sister communities of <em style="font-family:'Spectral',serif;color:#F0DDA8;font-style:italic;">Schifferstadt</em> and <em style="font-family:'Spectral',serif;color:#F0DDA8;font-style:italic;">M&ouml;rzheim</em> &mdash; through cultural exchange, friendship, and our shared heritage.</p>
+            <div style="display:flex;gap:14px;flex-wrap:wrap;">
+              <button onClick="{{ goInvolved }}" style="font-family:'Public Sans',sans-serif;font-size:15px;font-weight:700;color:#1C1714;background:#C8972F;border:none;border-radius:8px;cursor:pointer;padding:15px 28px;box-shadow:0 6px 20px rgba(200,151,47,0.28);">Become a Member</button>
+              <button onClick="{{ goEvents }}" style="font-family:'Public Sans',sans-serif;font-size:15px;font-weight:600;color:#FBF6EC;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.28);border-radius:8px;cursor:pointer;padding:15px 28px;">See Upcoming Events</button>
+            </div>
+          </div>
+          <div style="display:flex;gap:40px;flex-wrap:wrap;margin-top:62px;padding-top:30px;border-top:1px solid rgba(255,255,255,0.14);">
+            <div><div style="font-family:'Spectral',serif;font-size:34px;font-weight:700;color:#E0C77F;">1982</div><div style="font-size:12.5px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(251,246,236,0.6);font-weight:600;">Founded in Frederick</div></div>
+            <div><div style="font-family:'Spectral',serif;font-size:34px;font-weight:700;color:#E0C77F;">2</div><div style="font-size:12.5px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(251,246,236,0.6);font-weight:600;">German sister cities</div></div>
+            <div><div style="font-family:'Spectral',serif;font-size:34px;font-weight:700;color:#E0C77F;">40+</div><div style="font-size:12.5px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(251,246,236,0.6);font-weight:600;">Years of friendship</div></div>
+          </div>
+        </div>
+      </section>
+
+      <section style="max-width:1220px;margin:0 auto;padding:84px 32px 40px;">
+        <div style="text-align:center;max-width:680px;margin:0 auto 14px;">
+          <span style="font-size:12px;letter-spacing:0.24em;text-transform:uppercase;color:#A11A1A;font-weight:700;">Unsere Partnerst&auml;dte</span>
+          <h2 style="font-family:'Spectral',serif;font-weight:700;font-size:40px;line-height:1.1;letter-spacing:-0.015em;color:#1C1714;margin:14px 0 0;">Our two sister cities</h2>
+        </div>
+      </section>
+      <section style="max-width:1220px;margin:0 auto;padding:0 32px 30px;display:grid;grid-template-columns:1fr 1fr;gap:30px;">
+        <div style="background:#fff;border:1px solid #E6DCCB;border-radius:14px;overflow:hidden;box-shadow:0 1px 3px rgba(28,23,20,0.05);">
+          <div style="height:210px;background:repeating-linear-gradient(45deg,#EDE4D4 0 13px,#E5DAC6 13px 26px);position:relative;display:flex;align-items:flex-end;padding:14px 18px;">
+            <span style="font-family:monospace;font-size:11px;color:#9A8A70;">[ photo: Schifferstadt townscape ]</span>
+            <div style="position:absolute;top:14px;left:18px;display:flex;gap:0;border-radius:4px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.2);width:46px;height:30px;"><div style="flex:1;background:#1C1714;"></div><div style="flex:1;background:#A11A1A;"></div><div style="flex:1;background:#C8972F;"></div></div>
+          </div>
+          <div style="padding:26px 26px 28px;">
+            <h3 style="font-family:'Spectral',serif;font-weight:700;font-size:25px;color:#1C1714;margin:0 0 4px;">Schifferstadt</h3>
+            <p style="font-size:13px;letter-spacing:0.06em;text-transform:uppercase;color:#9E8B6E;font-weight:600;margin:0 0 14px;">Rhineland-Palatinate &middot; Partnered 1982</p>
+            <p style="font-size:15px;line-height:1.62;color:#6E6358;margin:0;">Namesake of Frederick&rsquo;s historic Schifferstadt House, this lively town is known for its famous radishes, its School of Art, and as Germany&rsquo;s center for Olympic wrestling.</p>
+          </div>
+        </div>
+        <div style="background:#fff;border:1px solid #E6DCCB;border-radius:14px;overflow:hidden;box-shadow:0 1px 3px rgba(28,23,20,0.05);">
+          <div style="height:210px;background:repeating-linear-gradient(45deg,#EDE4D4 0 13px,#E5DAC6 13px 26px);position:relative;display:flex;align-items:flex-end;padding:14px 18px;">
+            <span style="font-family:monospace;font-size:11px;color:#9A8A70;">[ photo: M&ouml;rzheim vineyards ]</span>
+            <div style="position:absolute;top:14px;left:18px;display:flex;gap:0;border-radius:4px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.2);width:46px;height:30px;"><div style="flex:1;background:#1C1714;"></div><div style="flex:1;background:#A11A1A;"></div><div style="flex:1;background:#C8972F;"></div></div>
+          </div>
+          <div style="padding:26px 26px 28px;">
+            <h3 style="font-family:'Spectral',serif;font-weight:700;font-size:25px;color:#1C1714;margin:0 0 4px;">M&ouml;rzheim</h3>
+            <p style="font-size:13px;letter-spacing:0.06em;text-transform:uppercase;color:#9E8B6E;font-weight:600;margin:0 0 14px;">Rhineland-Palatinate &middot; Partnered 1959</p>
+            <p style="font-size:15px;line-height:1.62;color:#6E6358;margin:0;">A hilly village celebrated for its wine and music, M&ouml;rzheim was the home village of John Thomas Schley, one of Frederick&rsquo;s earliest settlers and builder of its first house.</p>
+          </div>
+        </div>
+      </section>
+
+      <section style="margin:64px 0 0;background:#A11A1A;position:relative;overflow:hidden;">
+        <div style="position:absolute;inset:0;background:repeating-linear-gradient(50deg,rgba(255,255,255,0.03) 0 24px,transparent 24px 48px);"></div>
+        <div style="position:relative;max-width:920px;margin:0 auto;padding:74px 32px;text-align:center;">
+          <span style="font-size:12px;letter-spacing:0.26em;text-transform:uppercase;color:#F0CFA0;font-weight:700;">Our Mission</span>
+          <p style="font-family:'Spectral',serif;font-weight:500;font-size:28px;line-height:1.45;color:#FBF0E4;margin:20px 0 0;text-wrap:balance;">To promote Frederick&rsquo;s German heritage by facilitating partnerships between our citizens, businesses, schools, and clubs and those of our sister communities &mdash; fostering a continuing relationship from our shared heritage and mutual cultural understanding.</p>
+        </div>
+      </section>
+
+      <section style="max-width:1220px;margin:0 auto;padding:84px 32px 30px;">
+        <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:34px;flex-wrap:wrap;">
+          <div>
+            <span style="font-size:12px;letter-spacing:0.24em;text-transform:uppercase;color:#A11A1A;font-weight:700;">Was kommt &middot; What&rsquo;s Next</span>
+            <h2 style="font-family:'Spectral',serif;font-weight:700;font-size:40px;line-height:1.1;letter-spacing:-0.015em;color:#1C1714;margin:12px 0 0;">Upcoming events</h2>
+          </div>
+          <button onClick="{{ goEvents }}" style="font-family:'Public Sans',sans-serif;font-size:14px;font-weight:700;color:#A11A1A;background:none;border:none;cursor:pointer;padding:6px 0;border-bottom:2px solid #A11A1A;">View full calendar &rarr;</button>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:26px;">
+          <sc-for list="{{ homeEvents }}" as="ev" hint-placeholder-count="3">
+            <button onClick="{{ goEvents }}" style="text-align:left;background:#fff;border:1px solid #E6DCCB;border-radius:14px;overflow:hidden;box-shadow:0 1px 3px rgba(28,23,20,0.05);cursor:pointer;padding:0;display:flex;flex-direction:column;">
+              <div style="display:flex;align-items:stretch;">
+                <div style="background:#1C1714;color:#E0C77F;padding:16px 20px;text-align:center;display:flex;flex-direction:column;justify-content:center;min-width:78px;">
+                  <span style="font-family:'Spectral',serif;font-size:28px;font-weight:700;line-height:1;">{{ ev.day }}</span>
+                  <span style="font-size:11px;letter-spacing:0.16em;text-transform:uppercase;margin-top:3px;font-weight:600;">{{ ev.mon }}</span>
+                </div>
+                <div style="padding:16px 18px;flex:1;">
+                  <div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#A11A1A;font-weight:700;margin-bottom:6px;">{{ ev.tag }}</div>
+                  <div style="font-family:'Spectral',serif;font-size:18px;font-weight:600;color:#1C1714;line-height:1.25;">{{ ev.title }}</div>
+                </div>
+              </div>
+              <div style="padding:0 18px 18px;font-size:14px;line-height:1.55;color:#6E6358;">{{ ev.blurb }}</div>
+            </button>
+          </sc-for>
+        </div>
+      </section>
+
+      <section style="max-width:1220px;margin:0 auto;padding:64px 32px 30px;">
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:26px;">
+          <div style="background:#fff;border:1px solid #E6DCCB;border-radius:14px;padding:32px 28px;box-shadow:0 1px 3px rgba(28,23,20,0.05);">
+            <div style="width:46px;height:46px;border-radius:50%;background:#F5EFE3;border:1px solid #E6DCCB;display:flex;align-items:center;justify-content:center;font-family:'Spectral',serif;font-size:22px;font-weight:700;color:#A11A1A;margin-bottom:18px;">M</div>
+            <h3 style="font-family:'Spectral',serif;font-weight:700;font-size:22px;color:#1C1714;margin:0 0 8px;">Become a member</h3>
+            <p style="font-size:15px;line-height:1.6;color:#6E6358;margin:0 0 18px;">Join for just $20 a year and help keep this friendship thriving across the Atlantic.</p>
+            <button onClick="{{ goInvolved }}" style="font-family:'Public Sans',sans-serif;font-size:14px;font-weight:700;color:#A11A1A;background:none;border:none;cursor:pointer;padding:0;border-bottom:2px solid #A11A1A;">Join today &rarr;</button>
+          </div>
+          <div style="background:#fff;border:1px solid #E6DCCB;border-radius:14px;padding:32px 28px;box-shadow:0 1px 3px rgba(28,23,20,0.05);">
+            <div style="width:46px;height:46px;border-radius:50%;background:#F5EFE3;border:1px solid #E6DCCB;display:flex;align-items:center;justify-content:center;font-family:'Spectral',serif;font-size:22px;font-weight:700;color:#A11A1A;margin-bottom:18px;">H</div>
+            <h3 style="font-family:'Spectral',serif;font-weight:700;font-size:22px;color:#1C1714;margin:0 0 8px;">Host a visitor</h3>
+            <p style="font-size:15px;line-height:1.6;color:#6E6358;margin:0 0 18px;">Open your home to a student or guest from Germany and build a friendship that lasts a lifetime.</p>
+            <button onClick="{{ goInvolved }}" style="font-family:'Public Sans',sans-serif;font-size:14px;font-weight:700;color:#A11A1A;background:none;border:none;cursor:pointer;padding:0;border-bottom:2px solid #A11A1A;">Learn more &rarr;</button>
+          </div>
+          <div style="background:#fff;border:1px solid #E6DCCB;border-radius:14px;padding:32px 28px;box-shadow:0 1px 3px rgba(28,23,20,0.05);">
+            <div style="width:46px;height:46px;border-radius:50%;background:#F5EFE3;border:1px solid #E6DCCB;display:flex;align-items:center;justify-content:center;font-family:'Spectral',serif;font-size:22px;font-weight:700;color:#A11A1A;margin-bottom:18px;">$</div>
+            <h3 style="font-family:'Spectral',serif;font-weight:700;font-size:22px;color:#1C1714;margin:0 0 8px;">Make a gift</h3>
+            <p style="font-size:15px;line-height:1.6;color:#6E6358;margin:0 0 18px;">Tax-deductible donations through our FCLF affiliation support exchanges and cultural programs.</p>
+            <button onClick="{{ goInvolved }}" style="font-family:'Public Sans',sans-serif;font-size:14px;font-weight:700;color:#A11A1A;background:none;border:none;cursor:pointer;padding:0;border-bottom:2px solid #A11A1A;">Donate &rarr;</button>
+          </div>
+        </div>
+      </section>
+
+      <section style="max-width:1220px;margin:0 auto;padding:64px 32px 90px;">
+        <div style="background:#1C1714;border-radius:18px;padding:54px 48px;display:flex;align-items:center;justify-content:space-between;gap:36px;flex-wrap:wrap;position:relative;overflow:hidden;">
+          <div style="position:absolute;top:0;left:0;right:0;height:4px;display:flex;"><div style="flex:1;background:#1C1714;"></div><div style="flex:1;background:#A11A1A;"></div><div style="flex:1;background:#C8972F;"></div></div>
+          <div style="max-width:440px;">
+            <h2 style="font-family:'Spectral',serif;font-weight:700;font-size:30px;color:#FBF6EC;margin:0 0 10px;">Stay in the loop</h2>
+            <p style="font-size:15.5px;line-height:1.6;color:rgba(251,246,236,0.75);margin:0;">Our newsletter brings event invitations, exchange stories, and news from across the Atlantic.</p>
+          </div>
+          <sc-if value="{{ newsDone }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex;align-items:center;gap:12px;background:rgba(200,151,47,0.16);border:1px solid rgba(200,151,47,0.5);border-radius:10px;padding:18px 24px;color:#E0C77F;font-weight:600;font-size:15px;">Danke! You&rsquo;re on the list. &#10003;</div>
+          </sc-if>
+          <sc-if value="{{ newsNotDone }}" hint-placeholder-val="{{ true }}">
+            <form onSubmit="{{ submitNews }}" style="display:flex;gap:10px;flex-wrap:wrap;">
+              <input value="{{ news }}" onChange="{{ onNews }}" type="email" placeholder="your@email.com" style="font-family:'Public Sans',sans-serif;font-size:15px;padding:14px 18px;border-radius:9px;border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.06);color:#FBF6EC;min-width:240px;outline:none;">
+              <button type="submit" style="font-family:'Public Sans',sans-serif;font-size:15px;font-weight:700;color:#1C1714;background:#C8972F;border:none;border-radius:9px;cursor:pointer;padding:14px 26px;">Subscribe</button>
+            </form>
+          </sc-if>
+        </div>
+      </section>
+
+    </div>
+    </sc-if>
+
+    <sc-if value="{{ isAbout }}">
+    <div>
+      <section style="background:#EFE7D8;border-bottom:1px solid #E6DCCB;">
+        <div style="max-width:1220px;margin:0 auto;padding:64px 32px 60px;">
+          <div style="width:40px;height:3px;display:flex;border-radius:2px;overflow:hidden;margin-bottom:18px;"><div style="flex:1;background:#1C1714;"></div><div style="flex:1;background:#A11A1A;"></div><div style="flex:1;background:#C8972F;"></div></div>
+          <span style="font-size:12px;letter-spacing:0.24em;text-transform:uppercase;color:#A11A1A;font-weight:700;">&Uuml;ber uns &middot; About</span>
+          <h1 style="font-family:'Spectral',serif;font-weight:700;font-size:48px;line-height:1.05;letter-spacing:-0.02em;color:#1C1714;margin:14px 0 16px;max-width:760px;">A friendship rooted in shared heritage</h1>
+          <p style="font-size:18px;line-height:1.6;color:#6E6358;max-width:620px;margin:0;">The Frederick Sister Cities Association has spent four decades nurturing the bonds between Frederick and its German sister cities.</p>
+        </div>
+      </section>
+
+      <section style="max-width:1100px;margin:0 auto;padding:76px 32px 30px;display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;align-items:center;">
+        <div>
+          <span style="font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#A11A1A;font-weight:700;">Our story</span>
+          <h2 style="font-family:'Spectral',serif;font-weight:700;font-size:32px;color:#1C1714;margin:12px 0 18px;">Schifferstadt and M&ouml;rzheim &mdash; your gateway to Germany</h2>
+          <p style="font-size:16px;line-height:1.72;color:#574E44;margin:0 0 16px;">To promote interaction and cultural exchange between our sister cities and Frederick, an ad hoc committee first formed in town. In 1990, founding members &mdash; supported by Mayor Paul Gordon &mdash; established the Frederick Sister Cities Association.</p>
+          <p style="font-size:16px;line-height:1.72;color:#574E44;margin:0;">For more than three decades since, the FSCA has actively engaged Frederick with M&ouml;rzheim and Schifferstadt &mdash; through student exchanges, host families, delegations, and cultural celebrations that keep our shared roots alive.</p>
+        </div>
+        <div style="height:340px;border-radius:14px;background:repeating-linear-gradient(45deg,#EDE4D4 0 13px,#E5DAC6 13px 26px);border:1px solid #E6DCCB;display:flex;align-items:flex-end;padding:16px 20px;">
+          <span style="font-family:monospace;font-size:11px;color:#9A8A70;">[ photo: host families &amp; exchange students ]</span>
+        </div>
+      </section>
+
+      <section style="max-width:1100px;margin:0 auto;padding:50px 32px 30px;">
+        <h2 style="font-family:'Spectral',serif;font-weight:700;font-size:30px;color:#1C1714;margin:0 0 8px;text-align:center;">The deeper history</h2>
+        <p style="font-size:15px;color:#9E8B6E;text-align:center;margin:0 0 36px;">How two German towns became part of Frederick&rsquo;s story</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:30px;">
+          <div style="background:#fff;border:1px solid #E6DCCB;border-radius:14px;padding:30px 30px 32px;box-shadow:0 1px 3px rgba(28,23,20,0.05);">
+            <h3 style="font-family:'Spectral',serif;font-weight:700;font-size:23px;color:#1C1714;margin:0 0 4px;">M&ouml;rzheim &middot; 1959</h3>
+            <p style="font-size:13px;letter-spacing:0.04em;text-transform:uppercase;color:#A11A1A;font-weight:600;margin:0 0 14px;">Frederick&rsquo;s first sister-city tie</p>
+            <p style="font-size:15px;line-height:1.68;color:#574E44;margin:0;">It began in 1959, when Frederick entered a sister-city agreement with M&ouml;rzheim &mdash; the home village of John Thomas Schley, one of Frederick&rsquo;s earliest settlers, who arrived in 1745 and built the city&rsquo;s first house. The Schley, Shriver, and Delaplaine families lent their personal ties to that first bond.</p>
+          </div>
+          <div style="background:#fff;border:1px solid #E6DCCB;border-radius:14px;padding:30px 30px 32px;box-shadow:0 1px 3px rgba(28,23,20,0.05);">
+            <h3 style="font-family:'Spectral',serif;font-weight:700;font-size:23px;color:#1C1714;margin:0 0 4px;">Schifferstadt &middot; 1982</h3>
+            <p style="font-size:13px;letter-spacing:0.04em;text-transform:uppercase;color:#A11A1A;font-weight:600;margin:0 0 14px;">A name Frederick already knew</p>
+            <p style="font-size:15px;line-height:1.68;color:#574E44;margin:0;">In 1982, with the encouragement of Mayor Ron Young, Frederick formed an alliance with Schifferstadt &mdash; hometown of the Brunner family, who in 1736 farmed a 303-acre tract they named after their German home. The stone house they built in 1758 still stands today as the Schifferstadt Architectural Museum.</p>
+          </div>
+        </div>
+      </section>
+
+      <section style="margin:60px 0 0;background:#1C1714;">
+        <div style="max-width:1100px;margin:0 auto;padding:70px 32px;">
+          <div style="text-align:center;margin-bottom:40px;">
+            <span style="font-size:12px;letter-spacing:0.24em;text-transform:uppercase;color:#E0C77F;font-weight:700;">Gru&szlig;worte &middot; A word from our mayors</span>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:30px;">
+            <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:32px;">
+              <p style="font-family:'Spectral',serif;font-style:italic;font-size:18px;line-height:1.6;color:#FBF6EC;margin:0 0 20px;">&ldquo;The relationships between Frederick and our two sister cities have been instrumental in the development of our respective cultures &mdash; an avenue through which we pass this legacy on to generations to come.&rdquo;</p>
+              <div style="font-size:14px;font-weight:700;color:#E0C77F;">Mayor Michael O&rsquo;Connor</div>
+              <div style="font-size:13px;color:#9E8B6E;">City of Frederick</div>
+            </div>
+            <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:32px;">
+              <p style="font-family:'Spectral',serif;font-style:italic;font-size:18px;line-height:1.6;color:#FBF6EC;margin:0 0 20px;">&ldquo;Nicht nur St&auml;dte sind befreundet, es sind vor allem die Menschen, die miteinander verbunden sind. Bei allem was Menschen unterscheidet gibt es doch viel mehr, was sie verbindet.&rdquo;</p>
+              <div style="font-size:14px;font-weight:700;color:#E0C77F;">B&uuml;rgermeisterin Ilona Volk</div>
+              <div style="font-size:13px;color:#9E8B6E;">Stadt Schifferstadt</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section style="max-width:1100px;margin:0 auto;padding:70px 32px 90px;">
+        <div style="background:#fff;border:1px solid #E6DCCB;border-radius:16px;padding:42px 44px;display:flex;gap:40px;align-items:center;flex-wrap:wrap;box-shadow:0 1px 3px rgba(28,23,20,0.05);">
+          <div style="flex:1;min-width:280px;">
+            <span style="font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#A11A1A;font-weight:700;">Our affiliation</span>
+            <h2 style="font-family:'Spectral',serif;font-weight:700;font-size:26px;color:#1C1714;margin:10px 0 12px;">Frederick County Landmarks Foundation</h2>
+            <p style="font-size:15px;line-height:1.68;color:#574E44;margin:0 0 18px;">FSCA is an affiliate of the FCLF, a private nonprofit that preserves the historic sites of Frederick County &mdash; including the Schifferstadt House. This affiliation makes contributions to FSCA tax-deductible.</p>
+            <a href="https://www.fredericklandmarks.org" target="_blank" rel="noopener" style="font-family:'Public Sans',sans-serif;font-size:14px;font-weight:700;color:#A11A1A;text-decoration:none;border-bottom:2px solid #A11A1A;padding-bottom:2px;">Visit fredericklandmarks.org &rarr;</a>
+          </div>
+          <div style="width:180px;height:120px;border-radius:12px;background:repeating-linear-gradient(45deg,#EDE4D4 0 13px,#E5DAC6 13px 26px);border:1px solid #E6DCCB;display:flex;align-items:center;justify-content:center;"><span style="font-family:monospace;font-size:11px;color:#9A8A70;">[ FCLF logo ]</span></div>
+        </div>
+      </section>
+    </div>
+    </sc-if>
+    <sc-if value="{{ isEvents }}">
+    <div>
+      <section style="background:#EFE7D8;border-bottom:1px solid #E6DCCB;">
+        <div style="max-width:1100px;margin:0 auto;padding:64px 32px 60px;">
+          <div style="width:40px;height:3px;display:flex;border-radius:2px;overflow:hidden;margin-bottom:18px;"><div style="flex:1;background:#1C1714;"></div><div style="flex:1;background:#A11A1A;"></div><div style="flex:1;background:#C8972F;"></div></div>
+          <span style="font-size:12px;letter-spacing:0.24em;text-transform:uppercase;color:#A11A1A;font-weight:700;">Veranstaltungen &middot; Events</span>
+          <h1 style="font-family:'Spectral',serif;font-weight:700;font-size:48px;line-height:1.05;letter-spacing:-0.02em;color:#1C1714;margin:14px 0 16px;">Gather, celebrate, connect</h1>
+          <p style="font-size:18px;line-height:1.6;color:#6E6358;max-width:600px;margin:0;">From membership meetings to Maifest, our calendar is full of ways to take part in the friendship.</p>
+        </div>
+      </section>
+
+      <section style="max-width:1100px;margin:0 auto;padding:42px 32px 0;">
+        <div style="display:inline-flex;gap:6px;background:#EDE4D4;padding:6px;border-radius:11px;">
+          <button onClick="{{ setUpcoming }}" style="{{ tabUpcomingStyle }}">Upcoming</button>
+          <button onClick="{{ setPast }}" style="{{ tabPastStyle }}">Past Highlights</button>
+        </div>
+      </section>
+
+      <sc-if value="{{ showUpcoming }}" hint-placeholder-val="{{ true }}">
+      <section style="max-width:1100px;margin:0 auto;padding:34px 32px 90px;display:flex;flex-direction:column;gap:20px;">
+        <sc-for list="{{ upcoming }}" as="ev" hint-placeholder-count="4">
+          <div style="background:#fff;border:1px solid #E6DCCB;border-radius:14px;padding:26px 28px;display:flex;gap:26px;align-items:flex-start;box-shadow:0 1px 3px rgba(28,23,20,0.05);flex-wrap:wrap;">
+            <div style="background:#1C1714;color:#E0C77F;border-radius:11px;padding:16px 20px;text-align:center;min-width:88px;">
+              <div style="font-family:'Spectral',serif;font-size:34px;font-weight:700;line-height:1;">{{ ev.day }}</div>
+              <div style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;font-weight:600;margin-top:4px;">{{ ev.mon }} {{ ev.year }}</div>
+            </div>
+            <div style="flex:1;min-width:240px;">
+              <div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#A11A1A;font-weight:700;margin-bottom:6px;">{{ ev.tag }}</div>
+              <h3 style="font-family:'Spectral',serif;font-weight:700;font-size:23px;color:#1C1714;margin:0 0 8px;">{{ ev.title }}</h3>
+              <p style="font-size:15px;line-height:1.62;color:#6E6358;margin:0 0 12px;">{{ ev.blurb }}</p>
+              <div style="display:flex;gap:20px;font-size:13.5px;color:#9E8B6E;font-weight:600;flex-wrap:wrap;"><span>&#128205; {{ ev.loc }}</span><span>&#128336; {{ ev.time }}</span></div>
+            </div>
+            <button style="font-family:'Public Sans',sans-serif;font-size:14px;font-weight:700;color:#fff;background:#A11A1A;border:none;border-radius:8px;cursor:pointer;padding:12px 22px;align-self:center;">RSVP</button>
+          </div>
+        </sc-for>
+      </section>
+      </sc-if>
+
+      <sc-if value="{{ showPast }}" hint-placeholder-val="{{ false }}">
+      <section style="max-width:1100px;margin:0 auto;padding:34px 32px 90px;display:grid;grid-template-columns:repeat(3,1fr);gap:26px;">
+        <sc-for list="{{ past }}" as="ev" hint-placeholder-count="3">
+          <div style="background:#fff;border:1px solid #E6DCCB;border-radius:14px;overflow:hidden;box-shadow:0 1px 3px rgba(28,23,20,0.05);">
+            <div style="height:150px;background:repeating-linear-gradient(45deg,#EDE4D4 0 13px,#E5DAC6 13px 26px);display:flex;align-items:flex-end;padding:12px 16px;"><span style="font-family:monospace;font-size:10.5px;color:#9A8A70;">[ event photo ]</span></div>
+            <div style="padding:22px 22px 24px;">
+              <div style="font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:#A11A1A;font-weight:700;margin-bottom:8px;">{{ ev.year }}</div>
+              <h3 style="font-family:'Spectral',serif;font-weight:700;font-size:19px;color:#1C1714;margin:0 0 8px;line-height:1.25;">{{ ev.title }}</h3>
+              <p style="font-size:14px;line-height:1.6;color:#6E6358;margin:0;">{{ ev.blurb }}</p>
+            </div>
+          </div>
+        </sc-for>
+      </section>
+      </sc-if>
+    </div>
+    </sc-if>
+    <sc-if value="{{ isInvolved }}">
+    <div>
+      <section style="background:#EFE7D8;border-bottom:1px solid #E6DCCB;">
+        <div style="max-width:1100px;margin:0 auto;padding:64px 32px 60px;">
+          <div style="width:40px;height:3px;display:flex;border-radius:2px;overflow:hidden;margin-bottom:18px;"><div style="flex:1;background:#1C1714;"></div><div style="flex:1;background:#A11A1A;"></div><div style="flex:1;background:#C8972F;"></div></div>
+          <span style="font-size:12px;letter-spacing:0.24em;text-transform:uppercase;color:#A11A1A;font-weight:700;">Mitmachen &middot; Get Involved</span>
+          <h1 style="font-family:'Spectral',serif;font-weight:700;font-size:48px;line-height:1.05;letter-spacing:-0.02em;color:#1C1714;margin:14px 0 16px;">There&rsquo;s a place for you here</h1>
+          <p style="font-size:18px;line-height:1.6;color:#6E6358;max-width:600px;margin:0;">Become a member, open your home to a visitor, or support our programs with a gift &mdash; every bit keeps the friendship alive.</p>
+        </div>
+      </section>
+
+      <section style="max-width:1100px;margin:0 auto;padding:70px 32px 30px;display:grid;grid-template-columns:0.85fr 1.15fr;gap:50px;align-items:start;">
+        <div>
+          <span style="font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#A11A1A;font-weight:700;">Membership</span>
+          <h2 style="font-family:'Spectral',serif;font-weight:700;font-size:30px;color:#1C1714;margin:12px 0 16px;">Join the Association</h2>
+          <p style="font-size:16px;line-height:1.7;color:#574E44;margin:0 0 20px;">Membership is open to anyone interested in our work. Annual dues are just <strong style="color:#1C1714;">$20</strong>, payable each January, and your support directly funds exchanges and cultural programs.</p>
+          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;">
+            <li style="display:flex;gap:11px;font-size:15px;color:#574E44;"><span style="color:#C8972F;font-weight:700;">&#10003;</span>Invitations to members&rsquo; events and meetings</li>
+            <li style="display:flex;gap:11px;font-size:15px;color:#574E44;"><span style="color:#C8972F;font-weight:700;">&#10003;</span>Seasonal newsletter and annual report</li>
+            <li style="display:flex;gap:11px;font-size:15px;color:#574E44;"><span style="color:#C8972F;font-weight:700;">&#10003;</span>A direct hand in our exchange programs</li>
+          </ul>
+        </div>
+        <div style="background:#fff;border:1px solid #E6DCCB;border-radius:16px;padding:36px;box-shadow:0 4px 18px rgba(28,23,20,0.06);">
+          <sc-if value="{{ mDone }}" hint-placeholder-val="{{ false }}">
+            <div style="text-align:center;padding:30px 10px;">
+              <div style="font-family:'Spectral',serif;font-size:26px;font-weight:700;color:#A11A1A;margin-bottom:10px;">Willkommen!</div>
+              <p style="font-size:15.5px;line-height:1.6;color:#574E44;margin:0;">Thank you for joining the Frederick Sister Cities Association. We&rsquo;ll be in touch shortly with next steps for your membership.</p>
+            </div>
+          </sc-if>
+          <sc-if value="{{ mNotDone }}" hint-placeholder-val="{{ true }}">
+            <form onSubmit="{{ submitMember }}" style="display:flex;flex-direction:column;gap:18px;">
+              <div>
+                <label style="display:block;font-size:13px;font-weight:700;letter-spacing:0.02em;color:#1C1714;margin-bottom:7px;">Full name</label>
+                <input value="{{ mName }}" onChange="{{ onMName }}" placeholder="Jane Schmidt" style="width:100%;font-family:'Public Sans',sans-serif;font-size:15px;padding:13px 15px;border-radius:9px;border:1.5px solid #E6DCCB;background:#FCFAF5;color:#1C1714;outline:none;">
+              </div>
+              <div>
+                <label style="display:block;font-size:13px;font-weight:700;letter-spacing:0.02em;color:#1C1714;margin-bottom:7px;">Email address</label>
+                <input value="{{ mEmail }}" onChange="{{ onMEmail }}" type="email" placeholder="jane@email.com" style="width:100%;font-family:'Public Sans',sans-serif;font-size:15px;padding:13px 15px;border-radius:9px;border:1.5px solid #E6DCCB;background:#FCFAF5;color:#1C1714;outline:none;">
+              </div>
+              <div>
+                <label style="display:block;font-size:13px;font-weight:700;letter-spacing:0.02em;color:#1C1714;margin-bottom:9px;">Membership type</label>
+                <div style="display:flex;flex-direction:column;gap:10px;">
+                  <sc-for list="{{ mTypes }}" as="t" hint-placeholder-count="3">
+                    <button type="button" onClick="{{ t.onClick }}" style="{{ t.style }}"><span style="{{ t.dotStyle }}"></span>{{ t.label }}</button>
+                  </sc-for>
+                </div>
+              </div>
+              <button type="submit" style="font-family:'Public Sans',sans-serif;font-size:15px;font-weight:700;color:#fff;background:#A11A1A;border:none;border-radius:9px;cursor:pointer;padding:15px;margin-top:4px;box-shadow:0 4px 14px rgba(161,26,26,0.25);">Submit Membership</button>
+              <p style="font-size:12.5px;color:#9E8B6E;text-align:center;margin:0;">A board member will follow up with payment details.</p>
+            </form>
+          </sc-if>
+        </div>
+      </section>
+
+      <section style="max-width:1100px;margin:0 auto;padding:50px 32px 30px;">
+        <div style="background:#fff;border:1px solid #E6DCCB;border-radius:16px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;box-shadow:0 1px 3px rgba(28,23,20,0.05);">
+          <div style="padding:44px 42px;">
+            <span style="font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#A11A1A;font-weight:700;">Host a visitor</span>
+            <h2 style="font-family:'Spectral',serif;font-weight:700;font-size:28px;color:#1C1714;margin:12px 0 14px;">Open your home, open a world</h2>
+            <p style="font-size:15.5px;line-height:1.7;color:#574E44;margin:0 0 22px;">Each year, students and guests travel from Schifferstadt and M&ouml;rzheim to experience life in Frederick. Host families are the heart of the exchange &mdash; sharing meals, traditions, and friendships that span the Atlantic.</p>
+            <button onClick="{{ goContact }}" style="font-family:'Public Sans',sans-serif;font-size:14.5px;font-weight:700;color:#1C1714;background:#C8972F;border:none;border-radius:9px;cursor:pointer;padding:14px 26px;">Express interest in hosting</button>
+          </div>
+          <div style="background:repeating-linear-gradient(45deg,#EDE4D4 0 13px,#E5DAC6 13px 26px);display:flex;align-items:flex-end;padding:18px 22px;min-height:260px;"><span style="font-family:monospace;font-size:11px;color:#9A8A70;">[ photo: host family with visitor ]</span></div>
+        </div>
+      </section>
+
+      <section style="max-width:1100px;margin:0 auto;padding:50px 32px 90px;">
+        <div style="background:#1C1714;border-radius:16px;padding:48px;position:relative;overflow:hidden;">
+          <div style="position:absolute;top:0;left:0;right:0;height:4px;display:flex;"><div style="flex:1;background:#1C1714;"></div><div style="flex:1;background:#A11A1A;"></div><div style="flex:1;background:#C8972F;"></div></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center;">
+            <div>
+              <span style="font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#E0C77F;font-weight:700;">Make a gift</span>
+              <h2 style="font-family:'Spectral',serif;font-weight:700;font-size:30px;color:#FBF6EC;margin:12px 0 14px;">Support the friendship</h2>
+              <p style="font-size:15.5px;line-height:1.7;color:rgba(251,246,236,0.78);margin:0;">As an affiliate of the Frederick County Landmarks Foundation, contributions to FSCA are tax-deductible. Your gift funds student exchanges, host programs, and cultural events.</p>
+            </div>
+            <div>
+              <div style="font-size:13px;font-weight:700;color:#E0C77F;margin-bottom:12px;letter-spacing:0.02em;">Choose an amount</div>
+              <div style="display:flex;gap:12px;margin-bottom:18px;">
+                <sc-for list="{{ donateAmts }}" as="a" hint-placeholder-count="4">
+                  <button onClick="{{ a.onClick }}" style="{{ a.style }}">{{ a.label }}</button>
+                </sc-for>
+              </div>
+              <button style="width:100%;font-family:'Public Sans',sans-serif;font-size:15.5px;font-weight:700;color:#1C1714;background:#C8972F;border:none;border-radius:10px;cursor:pointer;padding:16px;box-shadow:0 6px 18px rgba(200,151,47,0.3);">Donate {{ donateAmtLabel }} &rarr;</button>
+              <p style="font-size:12.5px;color:rgba(251,246,236,0.5);text-align:center;margin:12px 0 0;">Secure giving through our FCLF affiliation.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    </sc-if>
+    <sc-if value="{{ isGallery }}">
+    <div>
+      <section style="background:#EFE7D8;border-bottom:1px solid #E6DCCB;">
+        <div style="max-width:1180px;margin:0 auto;padding:64px 32px 60px;">
+          <div style="width:40px;height:3px;display:flex;border-radius:2px;overflow:hidden;margin-bottom:18px;"><div style="flex:1;background:#1C1714;"></div><div style="flex:1;background:#A11A1A;"></div><div style="flex:1;background:#C8972F;"></div></div>
+          <span style="font-size:12px;letter-spacing:0.24em;text-transform:uppercase;color:#A11A1A;font-weight:700;">Galerie &middot; Gallery</span>
+          <h1 style="font-family:'Spectral',serif;font-weight:700;font-size:48px;line-height:1.05;letter-spacing:-0.02em;color:#1C1714;margin:14px 0 16px;">Four decades in pictures</h1>
+          <p style="font-size:18px;line-height:1.6;color:#6E6358;max-width:600px;margin:0;">Moments from exchanges, celebrations, and visits between our three cities.</p>
+        </div>
+      </section>
+
+      <section style="max-width:1180px;margin:0 auto;padding:40px 32px 0;">
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <sc-for list="{{ galleryFilters }}" as="f" hint-placeholder-count="4">
+            <button onClick="{{ f.onClick }}" style="{{ f.style }}">{{ f.label }}</button>
+          </sc-for>
+        </div>
+      </section>
+
+      <section style="max-width:1180px;margin:0 auto;padding:30px 32px 90px;display:grid;grid-template-columns:repeat(3,1fr);gap:22px;">
+        <sc-for list="{{ galleryItems }}" as="g" hint-placeholder-count="9">
+          <div style="border-radius:13px;overflow:hidden;border:1px solid #E6DCCB;background:#fff;box-shadow:0 1px 3px rgba(28,23,20,0.05);">
+            <div style="height:200px;background:repeating-linear-gradient(45deg,#EDE4D4 0 13px,#E5DAC6 13px 26px);position:relative;display:flex;align-items:flex-start;padding:12px;">
+              <span style="font-size:10.5px;letter-spacing:0.04em;text-transform:uppercase;color:#fff;background:#A11A1A;padding:4px 10px;border-radius:99px;font-weight:700;">{{ g.cat }}</span>
+            </div>
+            <div style="padding:14px 16px 16px;font-size:13.5px;color:#574E44;font-family:'Spectral',serif;">{{ g.label }}</div>
+          </div>
+        </sc-for>
+      </section>
+    </div>
+    </sc-if>
+    <sc-if value="{{ isNews }}">
+    <div>
+      <section style="background:#EFE7D8;border-bottom:1px solid #E6DCCB;">
+        <div style="max-width:1000px;margin:0 auto;padding:64px 32px 60px;">
+          <div style="width:40px;height:3px;display:flex;border-radius:2px;overflow:hidden;margin-bottom:18px;"><div style="flex:1;background:#1C1714;"></div><div style="flex:1;background:#A11A1A;"></div><div style="flex:1;background:#C8972F;"></div></div>
+          <span style="font-size:12px;letter-spacing:0.24em;text-transform:uppercase;color:#A11A1A;font-weight:700;">Mitteilungsblatt &middot; Newsletters</span>
+          <h1 style="font-family:'Spectral',serif;font-weight:700;font-size:48px;line-height:1.05;letter-spacing:-0.02em;color:#1C1714;margin:14px 0 16px;">News from across the Atlantic</h1>
+          <p style="font-size:18px;line-height:1.6;color:#6E6358;max-width:580px;margin:0;">Read our seasonal newsletters &mdash; or subscribe to have each issue delivered to your inbox.</p>
+        </div>
+      </section>
+
+      <section style="max-width:1000px;margin:0 auto;padding:54px 32px 30px;display:flex;flex-direction:column;gap:16px;">
+        <sc-for list="{{ newsletters }}" as="n" hint-placeholder-count="5">
+          <div style="background:#fff;border:1px solid #E6DCCB;border-radius:13px;padding:24px 26px;display:flex;align-items:center;gap:24px;box-shadow:0 1px 3px rgba(28,23,20,0.05);flex-wrap:wrap;">
+            <div style="width:62px;height:78px;border-radius:7px;background:repeating-linear-gradient(45deg,#EDE4D4 0 9px,#E5DAC6 9px 18px);border:1px solid #E6DCCB;flex:none;"></div>
+            <div style="flex:1;min-width:200px;">
+              <div style="display:flex;align-items:center;gap:10px;margin-bottom:5px;">
+                <h3 style="font-family:'Spectral',serif;font-weight:700;font-size:21px;color:#1C1714;margin:0;">{{ n.season }} {{ n.year }}</h3>
+                <span style="font-size:10.5px;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;color:#A11A1A;background:#FBF1F1;padding:3px 9px;border-radius:99px;">{{ n.badge }}</span>
+              </div>
+              <p style="font-size:14.5px;line-height:1.55;color:#6E6358;margin:0;">{{ n.desc }}</p>
+            </div>
+            <button style="font-family:'Public Sans',sans-serif;font-size:13.5px;font-weight:700;color:#A11A1A;background:#fff;border:1.5px solid #A11A1A;border-radius:8px;cursor:pointer;padding:11px 20px;">Read PDF &darr;</button>
+          </div>
+        </sc-for>
+      </section>
+
+      <section style="max-width:1000px;margin:0 auto;padding:40px 32px 90px;">
+        <div style="background:#1C1714;border-radius:16px;padding:46px 44px;text-align:center;position:relative;overflow:hidden;">
+          <div style="position:absolute;top:0;left:0;right:0;height:4px;display:flex;"><div style="flex:1;background:#1C1714;"></div><div style="flex:1;background:#A11A1A;"></div><div style="flex:1;background:#C8972F;"></div></div>
+          <h2 style="font-family:'Spectral',serif;font-weight:700;font-size:28px;color:#FBF6EC;margin:0 0 10px;">Never miss an issue</h2>
+          <p style="font-size:15.5px;line-height:1.6;color:rgba(251,246,236,0.75);margin:0 auto 24px;max-width:440px;">Subscribe and we&rsquo;ll send each seasonal newsletter straight to your inbox.</p>
+          <sc-if value="{{ newsDone }}" hint-placeholder-val="{{ false }}">
+            <div style="display:inline-flex;align-items:center;gap:12px;background:rgba(200,151,47,0.16);border:1px solid rgba(200,151,47,0.5);border-radius:10px;padding:16px 24px;color:#E0C77F;font-weight:600;font-size:15px;">Danke! You&rsquo;re subscribed. &#10003;</div>
+          </sc-if>
+          <sc-if value="{{ newsNotDone }}" hint-placeholder-val="{{ true }}">
+            <form onSubmit="{{ submitNews }}" style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
+              <input value="{{ news }}" onChange="{{ onNews }}" type="email" placeholder="your@email.com" style="font-family:'Public Sans',sans-serif;font-size:15px;padding:14px 18px;border-radius:9px;border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.06);color:#FBF6EC;min-width:260px;outline:none;">
+              <button type="submit" style="font-family:'Public Sans',sans-serif;font-size:15px;font-weight:700;color:#1C1714;background:#C8972F;border:none;border-radius:9px;cursor:pointer;padding:14px 26px;">Subscribe</button>
+            </form>
+          </sc-if>
+        </div>
+      </section>
+    </div>
+    </sc-if>
+    <sc-if value="{{ isContact }}">
+    <div>
+      <section style="background:#EFE7D8;border-bottom:1px solid #E6DCCB;">
+        <div style="max-width:1100px;margin:0 auto;padding:64px 32px 60px;">
+          <div style="width:40px;height:3px;display:flex;border-radius:2px;overflow:hidden;margin-bottom:18px;"><div style="flex:1;background:#1C1714;"></div><div style="flex:1;background:#A11A1A;"></div><div style="flex:1;background:#C8972F;"></div></div>
+          <span style="font-size:12px;letter-spacing:0.24em;text-transform:uppercase;color:#A11A1A;font-weight:700;">Kontakt &middot; Contact</span>
+          <h1 style="font-family:'Spectral',serif;font-weight:700;font-size:48px;line-height:1.05;letter-spacing:-0.02em;color:#1C1714;margin:14px 0 16px;">We&rsquo;d love to hear from you</h1>
+          <p style="font-size:18px;line-height:1.6;color:#6E6358;max-width:600px;margin:0;">Questions about membership, hosting, or events? Send us a note &mdash; a board member will respond.</p>
+        </div>
+      </section>
+
+      <section style="max-width:1100px;margin:0 auto;padding:70px 32px 30px;display:grid;grid-template-columns:1.1fr 0.9fr;gap:50px;align-items:start;">
+        <div style="background:#fff;border:1px solid #E6DCCB;border-radius:16px;padding:36px;box-shadow:0 4px 18px rgba(28,23,20,0.06);">
+          <sc-if value="{{ cDone }}" hint-placeholder-val="{{ false }}">
+            <div style="text-align:center;padding:34px 10px;">
+              <div style="font-family:'Spectral',serif;font-size:26px;font-weight:700;color:#A11A1A;margin-bottom:10px;">Vielen Dank!</div>
+              <p style="font-size:15.5px;line-height:1.6;color:#574E44;margin:0;">Your message is on its way. A member of our board will be in touch soon.</p>
+            </div>
+          </sc-if>
+          <sc-if value="{{ cNotDone }}" hint-placeholder-val="{{ true }}">
+            <form onSubmit="{{ submitContact }}" style="display:flex;flex-direction:column;gap:18px;">
+              <div style="display:flex;gap:16px;flex-wrap:wrap;">
+                <div style="flex:1;min-width:140px;">
+                  <label style="display:block;font-size:13px;font-weight:700;color:#1C1714;margin-bottom:7px;">Name</label>
+                  <input value="{{ cName }}" onChange="{{ onCName }}" placeholder="Your name" style="width:100%;font-family:'Public Sans',sans-serif;font-size:15px;padding:13px 15px;border-radius:9px;border:1.5px solid #E6DCCB;background:#FCFAF5;color:#1C1714;outline:none;">
+                </div>
+                <div style="flex:1;min-width:140px;">
+                  <label style="display:block;font-size:13px;font-weight:700;color:#1C1714;margin-bottom:7px;">Email</label>
+                  <input value="{{ cEmail }}" onChange="{{ onCEmail }}" type="email" placeholder="you@email.com" style="width:100%;font-family:'Public Sans',sans-serif;font-size:15px;padding:13px 15px;border-radius:9px;border:1.5px solid #E6DCCB;background:#FCFAF5;color:#1C1714;outline:none;">
+                </div>
+              </div>
+              <div>
+                <label style="display:block;font-size:13px;font-weight:700;color:#1C1714;margin-bottom:7px;">Subject</label>
+                <input value="{{ cSubject }}" onChange="{{ onCSubject }}" style="width:100%;font-family:'Public Sans',sans-serif;font-size:15px;padding:13px 15px;border-radius:9px;border:1.5px solid #E6DCCB;background:#FCFAF5;color:#1C1714;outline:none;">
+              </div>
+              <div>
+                <label style="display:block;font-size:13px;font-weight:700;color:#1C1714;margin-bottom:7px;">Message</label>
+                <textarea value="{{ cMsg }}" onChange="{{ onCMsg }}" rows="5" placeholder="How can we help?" style="width:100%;font-family:'Public Sans',sans-serif;font-size:15px;padding:13px 15px;border-radius:9px;border:1.5px solid #E6DCCB;background:#FCFAF5;color:#1C1714;outline:none;resize:vertical;"></textarea>
+              </div>
+              <button type="submit" style="font-family:'Public Sans',sans-serif;font-size:15px;font-weight:700;color:#fff;background:#A11A1A;border:none;border-radius:9px;cursor:pointer;padding:15px;box-shadow:0 4px 14px rgba(161,26,26,0.25);">Send Message</button>
+            </form>
+          </sc-if>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:24px;">
+          <div style="background:#fff;border:1px solid #E6DCCB;border-radius:14px;padding:28px;box-shadow:0 1px 3px rgba(28,23,20,0.05);">
+            <h3 style="font-family:'Spectral',serif;font-weight:700;font-size:19px;color:#1C1714;margin:0 0 14px;">Reach us</h3>
+            <div style="display:flex;flex-direction:column;gap:13px;font-size:14.5px;color:#574E44;">
+              <div><div style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#9E8B6E;font-weight:700;margin-bottom:2px;">Email</div>info@fredericksistercities.org</div>
+              <div><div style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#9E8B6E;font-weight:700;margin-bottom:2px;">Mailing address</div>c/o Schifferstadt Architectural Museum, 1110 Rosemont Ave, Frederick, MD 21701</div>
+              <div><div style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#9E8B6E;font-weight:700;margin-bottom:2px;">Social</div><a href="https://www.facebook.com/FrederickSisterCitiesAssociation/" target="_blank" rel="noopener" style="color:#A11A1A;text-decoration:none;font-weight:600;">Follow us on Facebook</a></div>
+            </div>
+          </div>
+          <div style="background:#EFE7D8;border:1px solid #E6DCCB;border-radius:14px;padding:28px;">
+            <h3 style="font-family:'Spectral',serif;font-weight:700;font-size:19px;color:#1C1714;margin:0 0 8px;">Meetings</h3>
+            <p style="font-size:14.5px;line-height:1.6;color:#574E44;margin:0;">Membership meets twice yearly &mdash; in <strong>April</strong> and <strong>October</strong>. The Board of Directors meets every other month. All members are welcome.</p>
+          </div>
+        </div>
+      </section>
+
+      <section style="max-width:1100px;margin:0 auto;padding:40px 32px 90px;">
+        <h2 style="font-family:'Spectral',serif;font-weight:700;font-size:28px;color:#1C1714;margin:0 0 6px;text-align:center;">Board of Directors</h2>
+        <p style="font-size:14.5px;color:#9E8B6E;text-align:center;margin:0 0 34px;">Elected by the membership to serve two-year terms</p>
+        <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:18px;">
+          <sc-for list="{{ board }}" as="b" hint-placeholder-count="5">
+            <div style="background:#fff;border:1px solid #E6DCCB;border-radius:13px;padding:24px 18px;text-align:center;box-shadow:0 1px 3px rgba(28,23,20,0.05);">
+              <div style="width:64px;height:64px;border-radius:50%;background:repeating-linear-gradient(45deg,#EDE4D4 0 8px,#E5DAC6 8px 16px);border:1px solid #E6DCCB;margin:0 auto 14px;"></div>
+              <div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#A11A1A;font-weight:700;margin-bottom:5px;">{{ b.role }}</div>
+              <div style="font-family:'Spectral',serif;font-size:15px;color:#574E44;">{{ b.name }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </section>
+    </div>
+    </sc-if>
+  </main>
+
+  <footer style="background:#1C1714;color:#CDBFAC;">
+    <div style="height:4px;display:flex;"><div style="flex:1;background:#1C1714;"></div><div style="flex:1;background:#A11A1A;"></div><div style="flex:1;background:#C8972F;"></div></div>
+    <div style="max-width:1220px;margin:0 auto;padding:56px 32px 30px;display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px;">
+      <div>
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+          <img src="assets/fsca-logo.png" alt="FSCA logo" style="width:46px;height:46px;object-fit:contain;border-radius:8px;background:#fff;padding:3px;">
+          <span style="font-family:'Spectral',serif;font-weight:700;font-size:17px;color:#FBF6EC;">Frederick Sister Cities</span>
+        </div>
+        <p style="font-size:14px;line-height:1.65;color:#9E8B6E;max-width:340px;margin:0 0 18px;">Connecting Frederick, Maryland with Schifferstadt and M&ouml;rzheim, Germany since 1982. An affiliate of the Frederick County Landmarks Foundation.</p>
+        <div style="font-size:13px;color:#9E8B6E;">fredericksistercities.org</div>
+      </div>
+      <div>
+        <div style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#E0C77F;font-weight:700;margin-bottom:16px;">Explore</div>
+        <div style="display:flex;flex-direction:column;gap:11px;align-items:flex-start;">
+          <sc-for list="{{ navItems }}" as="item" hint-placeholder-count="7">
+            <button onClick="{{ item.onClick }}" style="background:none;border:none;cursor:pointer;padding:0;font-family:'Public Sans',sans-serif;font-size:14.5px;color:#CDBFAC;text-align:left;">{{ item.label }}</button>
+          </sc-for>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#E0C77F;font-weight:700;margin-bottom:16px;">Connect</div>
+        <div style="display:flex;flex-direction:column;gap:11px;align-items:flex-start;">
+          <button onClick="{{ goContact }}" style="background:none;border:none;cursor:pointer;padding:0;font-family:'Public Sans',sans-serif;font-size:14.5px;color:#CDBFAC;text-align:left;">Contact us</button>
+          <a href="https://www.facebook.com/FrederickSisterCitiesAssociation/" target="_blank" rel="noopener" style="font-family:'Public Sans',sans-serif;font-size:14.5px;color:#CDBFAC;text-decoration:none;">Facebook</a>
+          <a href="https://www.fredericklandmarks.org" target="_blank" rel="noopener" style="font-family:'Public Sans',sans-serif;font-size:14.5px;color:#CDBFAC;text-decoration:none;">FCLF</a>
+          <button onClick="{{ goInvolved }}" style="background:none;border:none;cursor:pointer;padding:0;font-family:'Public Sans',sans-serif;font-size:14.5px;color:#CDBFAC;text-align:left;">Become a member</button>
+        </div>
+      </div>
+    </div>
+    <div style="max-width:1220px;margin:0 auto;padding:18px 32px 40px;border-top:1px solid rgba(255,255,255,0.08);font-size:12.5px;color:#7E715E;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+      <span>&copy; 2026 Frederick Sister Cities Association. A 501(c)(3) affiliate of FCLF.</span>
+      <span style="font-family:'Spectral',serif;font-style:italic;">St&auml;dtepartnerschaft seit 1982</span>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1180,&quot;height&quot;:820},&quot;startPage&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;home&quot;,&quot;about&quot;,&quot;events&quot;,&quot;involved&quot;,&quot;gallery&quot;,&quot;news&quot;,&quot;contact&quot;],&quot;default&quot;:&quot;home&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;eventsDefaultTab&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;upcoming&quot;,&quot;past&quot;],&quot;default&quot;:&quot;upcoming&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;donatePreset&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;20&quot;,&quot;50&quot;,&quot;100&quot;,&quot;250&quot;],&quot;default&quot;:&quot;20&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+const PAGES = [
+  {key:'home', label:'Home'},
+  {key:'about', label:'About'},
+  {key:'events', label:'Events'},
+  {key:'involved', label:'Get Involved'},
+  {key:'gallery', label:'Gallery'},
+  {key:'news', label:'Newsletters'},
+  {key:'contact', label:'Contact'},
+];
+const HOME_EVENTS = [
+  {day:'18', mon:'Apr', tag:'Membership Meeting', title:'Spring Bi-Annual Meeting', blurb:'Our April membership gathering with updates, planning, and Kaffee und Kuchen.'},
+  {day:'03', mon:'May', tag:'Cultural', title:'Maifest at Schifferstadt House', blurb:'A German-style spring festival with music, food, and family activities.'},
+  {day:'21', mon:'Jun', tag:'Exchange', title:'Welcome Our Summer Visitors', blurb:'Greet this year&rsquo;s student exchange group arriving from Germany.'},
+];
+const UPCOMING = [
+  {day:'18', mon:'Apr', year:'2026', tag:'Membership Meeting', title:'Spring Bi-Annual Membership Meeting', loc:'Schifferstadt Architectural Museum', time:'2:00 PM', blurb:'Our semi-annual gathering of the full membership. Hear program updates, vote on initiatives, and enjoy Kaffee und Kuchen together.'},
+  {day:'03', mon:'May', year:'2026', tag:'Cultural', title:'Maifest at Schifferstadt House', loc:'Rosemont Avenue, Frederick', time:'11:00 AM', blurb:'A German-style spring celebration with live music, traditional food, a maypole, and family activities on the museum grounds.'},
+  {day:'21', mon:'Jun', year:'2026', tag:'Exchange', title:'Welcome Our Summer Visitors', loc:'Downtown Frederick', time:'6:00 PM', blurb:'Join host families and members to welcome this year&rsquo;s student exchange group arriving from Schifferstadt and M&ouml;rzheim.'},
+  {day:'12', mon:'Sep', year:'2026', tag:'Social', title:'Oktoberfest Members&rsquo; Mixer', loc:'Carroll Creek Linear Park', time:'5:30 PM', blurb:'An early-autumn social with bratwurst, pretzels, and German beer to reconnect before the fall season begins.'},
+];
+const PAST = [
+  {year:'2024', title:'30th Delegation Visit to Schifferstadt', blurb:'A Frederick delegation traveled to Germany to celebrate the enduring partnership with our friends abroad.'},
+  {year:'2023', title:'German Heritage Day at the Schifferstadt House', blurb:'Tours, crafts, and storytelling brought Frederick&rsquo;s German founding to life for hundreds of visitors.'},
+  {year:'2022', title:'40th Anniversary Gala', blurb:'Members and city officials marked four decades of friendship with a commemorative evening.'},
+];
+const NEWSLETTERS = [
+  {season:'Spring', year:'2026', desc:'Maifest preview, member spotlight, and a letter from the President.', current:true},
+  {season:'Autumn', year:'2025', desc:'Recap of the summer exchange and our annual report to members.'},
+  {season:'Spring', year:'2025', desc:'Delegation highlights and the upcoming events calendar.'},
+  {season:'Autumn', year:'2024', desc:'Stories from host families and news from our sister cities.'},
+  {season:'Spring', year:'2024', desc:'A look back at German Heritage Day and member updates.'},
+];
+const GALLERY = [
+  {cat:'Exchange', label:'Student exchange group, Summer 2016'},
+  {cat:'Sister Cities', label:'Schifferstadt town square'},
+  {cat:'Events', label:'Maifest celebration at the museum'},
+  {cat:'Exchange', label:'Host family welcome dinner'},
+  {cat:'Sister Cities', label:'M&ouml;rzheim vineyards in autumn'},
+  {cat:'Events', label:'40th Anniversary Gala'},
+  {cat:'Exchange', label:'Frederick delegation in Germany'},
+  {cat:'Sister Cities', label:'Schifferstadt House, Frederick'},
+  {cat:'Events', label:'Oktoberfest members&rsquo; mixer'},
+];
+const GALLERY_FILTERS = ['All','Exchange','Events','Sister Cities'];
+const BOARD = [
+  {role:'President', name:'[ Board Member ]'},
+  {role:'Vice President', name:'[ Board Member ]'},
+  {role:'Secretary', name:'[ Board Member ]'},
+  {role:'Treasurer', name:'[ Board Member ]'},
+  {role:'Historian', name:'[ Board Member ]'},
+];
+const DONATE_AMTS = ['20','50','100','250'];
+class Component extends DCLogic {
+  state = {
+    page:(this.props && this.props.startPage) || 'home', news:'', newsDone:false,
+    eventsTab:(this.props && this.props.eventsDefaultTab) || 'upcoming',
+    galleryFilter:'All',
+    donateAmt:(this.props && this.props.donatePreset) || '50',
+    mName:'', mEmail:'', mType:'Individual', mDone:false,
+    cName:'', cEmail:'', cSubject:'Host family interest', cMsg:'', cDone:false,
+  };
+  go(key){
+    this.setState({page:key});
+    try { window.scrollTo({top:0, behavior:'auto'}); } catch(e) { window.scrollTo(0,0); }
+  }
+  renderVals(){
+    const page = this.state.page;
+    const RED = '#A11A1A', INK = '#1C1714';
+    const navItems = PAGES.map(p => ({
+      label: p.label,
+      onClick: () => this.go(p.key),
+      style: "font-family:'Public Sans',sans-serif;font-size:14px;font-weight:" + (page===p.key?'700':'500') + ";letter-spacing:0.01em;color:" + (page===p.key?RED:INK) + ";background:none;border:none;cursor:pointer;padding:5px 1px;border-bottom:2px solid " + (page===p.key?RED:'transparent') + ";",
+    }));
+    return {
+      navItems,
+      homeEvents: HOME_EVENTS,
+      goHome:()=>this.go('home'),
+      goAbout:()=>this.go('about'),
+      goEvents:()=>this.go('events'),
+      goInvolved:()=>this.go('involved'),
+      goGallery:()=>this.go('gallery'),
+      goNews:()=>this.go('news'),
+      goContact:()=>this.go('contact'),
+      isHome: page==='home', isAbout: page==='about', isEvents: page==='events',
+      isInvolved: page==='involved', isGallery: page==='gallery', isNews: page==='news', isContact: page==='contact',
+      news: this.state.news,
+      onNews:(e)=>this.setState({news:e.target.value}),
+      submitNews:(e)=>{ e.preventDefault(); if(this.state.news.trim()) this.setState({newsDone:true}); },
+      newsDone: this.state.newsDone,
+      newsNotDone: !this.state.newsDone,
+
+      upcoming: UPCOMING,
+      past: PAST,
+      newsletters: NEWSLETTERS.map(n => ({...n, badge: n.current ? 'Current Issue' : 'Archived'})),
+      board: BOARD,
+
+      eventsTab: this.state.eventsTab,
+      showUpcoming: this.state.eventsTab==='upcoming',
+      showPast: this.state.eventsTab==='past',
+      tabUpcomingStyle: this.tabStyle('upcoming'),
+      tabPastStyle: this.tabStyle('past'),
+      setUpcoming:()=>this.setState({eventsTab:'upcoming'}),
+      setPast:()=>this.setState({eventsTab:'past'}),
+
+      galleryFilters: GALLERY_FILTERS.map(f => ({
+        label:f,
+        onClick:()=>this.setState({galleryFilter:f}),
+        style: this.chipStyle(this.state.galleryFilter===f),
+      })),
+      galleryItems: GALLERY.filter(g => this.state.galleryFilter==='All' || g.cat===this.state.galleryFilter),
+
+      donateAmts: DONATE_AMTS.map(a => ({
+        label:'$'+a,
+        onClick:()=>this.setState({donateAmt:a}),
+        style: this.amtStyle(this.state.donateAmt===a),
+      })),
+      donateAmt: this.state.donateAmt,
+      donateAmtLabel: '$' + this.state.donateAmt,
+
+      mName:this.state.mName, mEmail:this.state.mEmail, mType:this.state.mType, mDone:this.state.mDone, mNotDone:!this.state.mDone,
+      onMName:(e)=>this.setState({mName:e.target.value}),
+      onMEmail:(e)=>this.setState({mEmail:e.target.value}),
+      mTypes: ['Individual','Family','Student'].map(t => ({
+        label: t==='Individual'?'Individual \u2014 $20/yr' : t==='Family'?'Family \u2014 $30/yr' : 'Student \u2014 $10/yr',
+        onClick:()=>this.setState({mType:t}),
+        style: this.radioStyle(this.state.mType===t),
+        dotStyle: this.dotStyle(this.state.mType===t),
+      })),
+      submitMember:(e)=>{ e.preventDefault(); if(this.state.mName.trim() && this.state.mEmail.trim()) this.setState({mDone:true}); },
+
+      cName:this.state.cName, cEmail:this.state.cEmail, cSubject:this.state.cSubject, cMsg:this.state.cMsg, cDone:this.state.cDone, cNotDone:!this.state.cDone,
+      onCName:(e)=>this.setState({cName:e.target.value}),
+      onCEmail:(e)=>this.setState({cEmail:e.target.value}),
+      onCSubject:(e)=>this.setState({cSubject:e.target.value}),
+      onCMsg:(e)=>this.setState({cMsg:e.target.value}),
+      submitContact:(e)=>{ e.preventDefault(); if(this.state.cName.trim() && this.state.cEmail.trim()) this.setState({cDone:true}); },
+    };
+  }
+  tabStyle(key){
+    const on = this.state.eventsTab===key;
+    return "font-family:'Public Sans',sans-serif;font-size:14px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;cursor:pointer;padding:12px 22px;border:none;border-radius:8px;background:" + (on?'#1C1714':'transparent') + ";color:" + (on?'#E0C77F':'#6E6358') + ";";
+  }
+  chipStyle(on){
+    return "font-family:'Public Sans',sans-serif;font-size:13.5px;font-weight:600;cursor:pointer;padding:9px 18px;border-radius:99px;border:1px solid " + (on?'#A11A1A':'#E6DCCB') + ";background:" + (on?'#A11A1A':'#fff') + ";color:" + (on?'#fff':'#6E6358') + ";";
+  }
+  amtStyle(on){
+    return "font-family:'Spectral',serif;font-size:22px;font-weight:700;cursor:pointer;padding:18px 0;border-radius:11px;border:2px solid " + (on?'#C8972F':'#E6DCCB') + ";background:" + (on?'#FBF3E1':'#fff') + ";color:" + (on?'#1C1714':'#6E6358') + ";flex:1;";
+  }
+  radioStyle(on){
+    return "display:flex;align-items:center;gap:12px;cursor:pointer;padding:15px 18px;border-radius:10px;border:1.5px solid " + (on?'#A11A1A':'#E6DCCB') + ";background:" + (on?'#FBF1F1':'#fff') + ";font-family:'Public Sans',sans-serif;font-size:15px;font-weight:600;color:#1C1714;";
+  }
+  dotStyle(on){
+    return "width:18px;height:18px;border-radius:50%;border:2px solid " + (on?'#A11A1A':'#C9BBA6') + ";background:" + (on?'radial-gradient(circle,#A11A1A 0 5px,#fff 5px)':'#fff') + ";flex:none;";
+  }
+}
+</script>
+</body>
+</html>
