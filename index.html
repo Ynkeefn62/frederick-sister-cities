@@ -20,7 +20,41 @@
   </noscript>
 </head>
 <body>
-  <div id="__bundler_thumbnail"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="#1C1714"></rect><rect x="30" y="30" width="40" height="13.3" fill="#1C1714"></rect><rect x="30" y="43.3" width="40" height="13.3" fill="#A11A1A"></rect><rect x="30" y="56.6" width="40" height="13.3" fill="#C8972F"></rect></svg></div>
+  <!-- Committee access gate (temporary) -->
+<div id="fsca-gate" style="position:fixed;inset:0;z-index:99999;background:#0f2b46;display:flex;align-items:center;justify-content:center;font-family:system-ui,-apple-system,sans-serif;">
+  <div style="background:#fff;padding:2rem;border-radius:12px;max-width:340px;width:90%;box-shadow:0 10px 40px rgba(0,0,0,.3);text-align:center;">
+    <h2 style="margin:0 0 .25rem;font-size:1.15rem;color:#0f2b46;">Frederick Sister Cities</h2>
+    <p style="margin:0 0 1.25rem;font-size:.9rem;color:#555;">This site is under committee review. Please enter the access password.</p>
+    <input id="fsca-pw" type="password" placeholder="Password" style="width:100%;box-sizing:border-box;padding:.65rem .75rem;font-size:1rem;border:1px solid #ccc;border-radius:8px;margin-bottom:.75rem;" />
+    <button id="fsca-go" style="width:100%;padding:.65rem;font-size:1rem;background:#0f2b46;color:#fff;border:none;border-radius:8px;cursor:pointer;">Enter</button>
+    <p id="fsca-err" style="display:none;margin:.75rem 0 0;font-size:.85rem;color:#c0392b;">Incorrect password.</p>
+  </div>
+</div>
+<script>
+(function () {
+  var PASSWORD = "sistercities123";          // set your committee password here
+  var KEY = "fsca-committee-access";
+  var gate = document.getElementById("fsca-gate");
+  function unlock() { gate.remove(); document.body.style.overflow = ""; }
+  if (sessionStorage.getItem(KEY) === "ok") {
+    unlock();
+  } else {
+    document.body.style.overflow = "hidden";
+    var check = function () {
+      if (document.getElementById("fsca-pw").value === PASSWORD) {
+        sessionStorage.setItem(KEY, "ok");
+        unlock();
+      } else {
+        document.getElementById("fsca-err").style.display = "block";
+      }
+    };
+    document.getElementById("fsca-go").addEventListener("click", check);
+    document.getElementById("fsca-pw").addEventListener("keydown", function (e) {
+      if (e.key === "Enter") { check(); }
+    });
+  }
+})();
+</script>  <div id="__bundler_thumbnail"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="#1C1714"></rect><rect x="30" y="30" width="40" height="13.3" fill="#1C1714"></rect><rect x="30" y="43.3" width="40" height="13.3" fill="#A11A1A"></rect><rect x="30" y="56.6" width="40" height="13.3" fill="#C8972F"></rect></svg></div>
   <div id="__bundler_loading">Unpacking...</div>
 
   <script>
