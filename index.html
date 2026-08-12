@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Frederick Sister Cities Association</title>
+<meta name="description" content="Connecting Frederick, Maryland with its German sister cities of Schifferstadt and Mörzheim since 1982. Cultural exchange, friendship, and shared heritage.">
+
+<link rel="canonical" href="https://fredericksistercities.org/">
+
+<!-- Favicons -->
+<link rel="icon" type="image/x-icon" href="favicons/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="favicons/favicon-48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicons/favicon-96.png">
+<link rel="icon" type="image/png" sizes="192x192" href="favicons/favicon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="favicons/favicon-512.png">
+<link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#F5EFE3">
+
+<!-- Social / Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Frederick Sister Cities Association">
+<meta property="og:title" content="Frederick Sister Cities Association">
+<meta property="og:description" content="Connecting Frederick, Maryland with its German sister cities of Schifferstadt and Mörzheim since 1982.">
+<meta property="og:image" content="https://fredericksistercities.org/favicons/favicon-512.png">
+<meta property="og:url" content="https://fredericksistercities.org/">
+<meta name="twitter:card" content="summary">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --ink:#1C1714; --red:#A11A1A; --gold:#C8972F; --lightgold:#E0C77F;
+    --cream:#F5EFE3; --cream2:#EFE7D8; --border:#E6DCCB;
+    --muted:#6E6358; --muted2:#9E8B6E; --text2:#574E44; --paper:#FCFAF5;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{background:var(--cream);font-family:'Public Sans',-apple-system,BlinkMacSystemFont,sans-serif;color:var(--ink);min-height:100vh;}
+  ::selection{background:var(--gold);color:var(--ink);}
+  img{max-width:100%;display:block;}
+  h1,h2,h3{font-family:'Spectral',serif;margin:0;}
+  p{margin:0;}
+  a{color:inherit;}
+  button{font-family:inherit;}
+  .stripe{height:4px;display:flex;}
+  .stripe > div{flex:1;}
+  .stripe .s1{background:var(--ink);} .stripe .s2{background:var(--red);} .stripe .s3{background:var(--gold);}
+  .container{max-width:1220px;margin:0 auto;padding:0 32px;}
+  .container-md{max-width:1100px;margin:0 auto;padding:0 32px;}
+  .container-sm{max-width:900px;margin:0 auto;padding:0 32px;}
+  .eyebrow{font-size:12px;letter-spacing:0.24em;text-transform:uppercase;color:var(--red);font-weight:700;}
+  .btn{font-family:'Public Sans',sans-serif;font-size:15px;font-weight:700;border:none;border-radius:8px;cursor:pointer;padding:15px 28px;display:inline-block;text-decoration:none;text-align:center;}
+  .btn-gold{color:var(--ink);background:var(--gold);box-shadow:0 6px 20px rgba(200,151,47,0.28);}
+  .btn-outline-light{color:#FBF6EC;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.28);}
+  .btn-red{color:#fff;background:var(--red);box-shadow:0 4px 14px rgba(161,26,26,0.25);}
+  .btn-red-outline{color:var(--red);background:#fff;border:1.5px solid var(--red);}
+  .card{background:#fff;border:1px solid var(--border);border-radius:14px;box-shadow:0 1px 3px rgba(28,23,20,0.05);}
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:30px;}
+  .grid-story{display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;align-items:center;}
+  .grid-involved{display:grid;grid-template-columns:0.85fr 1.15fr;gap:50px;align-items:start;}
+  .grid-contact{display:grid;grid-template-columns:1.1fr 0.9fr;gap:50px;align-items:start;}
+  .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px;}
+  .field-label{display:block;font-size:13px;font-weight:700;letter-spacing:0.02em;color:var(--ink);margin-bottom:7px;}
+  .field-input{width:100%;font-family:'Public Sans',sans-serif;font-size:15px;padding:13px 15px;border-radius:9px;border:1.5px solid var(--border);background:var(--paper);color:var(--ink);outline:none;}
+  .field-input:focus{border-color:var(--gold);}
+  .page{display:none;}
+  .page.active{display:block;}
+
+  /* Header */
+  header.site{position:sticky;top:0;z-index:50;background:rgba(245,239,227,0.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);}
+  .nav-row{padding:13px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;}
+  .brand{display:flex;align-items:center;gap:13px;background:none;border:none;cursor:pointer;padding:0;text-align:left;}
+  .brand img{width:50px;height:50px;object-fit:contain;border-radius:9px;background:#fff;padding:3px;box-shadow:0 1px 2px rgba(28,23,20,0.12);}
+  .brand-name{font-family:'Spectral',serif;font-weight:700;font-size:18px;color:var(--ink);letter-spacing:-0.01em;}
+  .brand-sub{font-size:10.5px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted2);font-weight:600;}
+  nav.primary{display:flex;align-items:center;gap:22px;}
+  .navlink{font-family:'Public Sans',sans-serif;font-size:14px;font-weight:500;letter-spacing:0.01em;color:var(--ink);background:none;border:none;cursor:pointer;padding:5px 1px;border-bottom:2px solid transparent;}
+  .navlink.active{font-weight:700;color:var(--red);border-bottom-color:var(--red);}
+  .hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;width:44px;height:44px;align-items:center;justify-content:center;}
+  .hamburger span{display:block;width:22px;height:2px;background:var(--ink);position:relative;}
+  .hamburger span::before,.hamburger span::after{content:"";position:absolute;left:0;width:22px;height:2px;background:var(--ink);transition:transform .15s ease;}
+  .hamburger span::before{top:-7px;} .hamburger span::after{top:7px;}
+  .mobile-panel{display:none;flex-direction:column;gap:2px;padding:6px 32px 18px;border-top:1px solid var(--border);}
+  .mobile-panel .navlink{padding:12px 4px;font-size:15px;border-bottom:1px solid var(--border);width:100%;text-align:left;}
+  .mobile-panel .navlink:last-of-type{border-bottom:none;}
+
+  /* Hero */
+  .hero{position:relative;overflow:hidden;background:var(--ink) url('assets/schifferstadt-museum.jpg') center/cover;}
+  .hero-overlay{position:absolute;inset:0;background:linear-gradient(105deg,rgba(28,23,20,0.94) 0%,rgba(28,23,20,0.88) 46%,rgba(28,23,20,0.6) 100%);}
+  .hero-inner{position:relative;padding:96px 32px 104px;}
+  .hero-copy{max-width:660px;}
+  .hero h1{font-weight:700;font-size:clamp(32px,6vw,58px);line-height:1.06;letter-spacing:-0.02em;color:#FBF6EC;margin:0 0 24px;}
+  .hero p.lead{font-size:18px;line-height:1.65;color:rgba(251,246,236,0.82);margin:0 0 34px;max-width:560px;}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;}
+  .hero-stats{display:flex;gap:40px;flex-wrap:wrap;margin-top:62px;padding-top:30px;border-top:1px solid rgba(255,255,255,0.14);}
+  .hero-stat-num{font-family:'Spectral',serif;font-size:34px;font-weight:700;color:var(--lightgold);}
+  .hero-stat-label{font-size:12.5px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(251,246,236,0.6);font-weight:600;}
+
+  .page-hero{background:var(--cream2);border-bottom:1px solid var(--border);}
+  .page-hero-inner{padding:64px 32px 60px;}
+  .page-hero h1{font-weight:700;font-size:clamp(30px,5vw,48px);line-height:1.06;letter-spacing:-0.02em;color:var(--ink);margin:14px 0 16px;}
+  .page-hero p.lead{font-size:18px;line-height:1.6;color:var(--muted);margin:0;max-width:620px;}
+  .divider3{width:40px;height:3px;display:flex;border-radius:2px;overflow:hidden;margin-bottom:18px;}
+  .divider3 > div{flex:1;}
+
+  section{position:relative;}
+  .empty-state{max-width:900px;margin:0 auto;padding:90px 32px 110px;text-align:center;}
+  .empty-badge{width:56px;height:56px;border-radius:50%;background:var(--cream2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;margin:0 auto 22px;font-family:'Spectral',serif;font-size:26px;color:var(--red);}
+
+  footer.site{background:var(--ink);color:#CDBFAC;}
+  .footer-top{padding:56px 32px 30px;}
+  .footer-brand-row{display:flex;align-items:center;gap:12px;margin-bottom:16px;}
+  .footer-brand-row img{width:46px;height:46px;object-fit:contain;border-radius:8px;background:#fff;padding:3px;}
+  .footer-col-title{font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--lightgold);font-weight:700;margin-bottom:16px;}
+  .footer-links{display:flex;flex-direction:column;gap:11px;align-items:flex-start;}
+  .footer-links a,.footer-links button{background:none;border:none;cursor:pointer;padding:0;font-family:'Public Sans',sans-serif;font-size:14.5px;color:#CDBFAC;text-align:left;text-decoration:none;}
+  .footer-bottom{max-width:1220px;margin:0 auto;padding:18px 32px 40px;border-top:1px solid rgba(255,255,255,0.08);font-size:12.5px;color:#7E715E;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+
+  /* Responsive: tablet and below */
+  @media (max-width: 900px){
+    .grid-story,.grid-involved,.grid-contact{grid-template-columns:1fr;gap:34px;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width: 780px){
+    nav.primary{display:none;}
+    .hamburger{display:flex;}
+    .mobile-panel.open{display:flex;}
+    .hero-inner{padding:64px 24px 72px;}
+    .page-hero-inner{padding:48px 24px 42px;}
+    .container,.container-md,.container-sm{padding:0 20px;}
+    .grid-2{grid-template-columns:1fr;gap:22px;}
+    .footer-grid{grid-template-columns:1fr;gap:34px;}
+    .footer-top,.footer-bottom{padding-left:20px;padding-right:20px;}
+    section[style],.container,.container-md,.container-sm{}
+    .nav-row{padding:12px 20px;}
+    .hero-stats{gap:26px;}
+  }
+  @media (max-width: 480px){
+    .hero h1{font-size:30px;}
+    .hero p.lead{font-size:16px;}
+    .btn{padding:13px 20px;font-size:14px;width:100%;}
+    .hero-actions{flex-direction:column;}
+    .hero-actions .btn{width:100%;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="stripe"><div class="s1"></div><div class="s2"></div><div class="s3"></div></div>
+  <div class="container nav-row">
+    <button class="brand" data-nav="home" aria-label="Go to home page">
+      <img src="assets/fsca-logo.png" alt="FSCA logo">
+      <span style="display:flex;flex-direction:column;line-height:1.12;">
+        <span class="brand-name">Frederick Sister Cities</span>
+        <span class="brand-sub">Association &middot; Est. 1982</span>
+      </span>
+    </button>
+    <nav class="primary" aria-label="Primary">
+      <button class="navlink" data-nav="home">Home</button>
+      <button class="navlink" data-nav="about">About</button>
+      <button class="navlink" data-nav="events">Events</button>
+      <button class="navlink" data-nav="involved">Get Involved</button>
+      <button class="navlink" data-nav="gallery">Gallery</button>
+      <button class="navlink" data-nav="news">Newsletters</button>
+      <button class="navlink" data-nav="contact">Contact</button>
+      <button class="btn btn-red" data-nav="involved" style="padding:10px 18px;font-size:13.5px;">Join Us</button>
+    </nav>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu" aria-expanded="false">
+      <span></span>
+    </button>
+  </div>
+  <div class="mobile-panel" id="mobilePanel">
+    <button class="navlink" data-nav="home">Home</button>
+    <button class="navlink" data-nav="about">About</button>
+    <button class="navlink" data-nav="events">Events</button>
+    <button class="navlink" data-nav="involved">Get Involved</button>
+    <button class="navlink" data-nav="gallery">Gallery</button>
+    <button class="navlink" data-nav="news">Newsletters</button>
+    <button class="navlink" data-nav="contact">Contact</button>
+  </div>
+</header>
+
+<main>
+
+<!-- HOME -->
+<div class="page" id="page-home">
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:22px;">
+          <div class="divider3" style="width:40px;height:3px;"><div class="s1" style="background:var(--ink);"></div><div class="s2" style="background:var(--red);"></div><div class="s3" style="background:var(--gold);"></div></div>
+          <span style="font-size:12px;letter-spacing:0.26em;text-transform:uppercase;color:var(--lightgold);font-weight:700;">Willkommen &middot; Welcome</span>
+        </div>
+        <h1>A living bridge between Frederick and Germany.</h1>
+        <p class="lead">For over four decades we have connected the people of Frederick with our sister communities of <em style="font-family:'Spectral',serif;color:#F0DDA8;font-style:italic;">Schifferstadt</em> and <em style="font-family:'Spectral',serif;color:#F0DDA8;font-style:italic;">M&ouml;rzheim</em> &mdash; through cultural exchange, friendship, and our shared heritage.</p>
+        <div class="hero-actions">
+          <button class="btn btn-gold" data-nav="involved">Become a Member</button>
+          <button class="btn btn-outline-light" data-nav="events">See Upcoming Events</button>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div><div class="hero-stat-num">1982</div><div class="hero-stat-label">Founded in Frederick</div></div>
+        <div><div class="hero-stat-num">2</div><div class="hero-stat-label">German sister cities</div></div>
+        <div><div class="hero-stat-num">40+</div><div class="hero-stat-label">Years of friendship</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container" style="padding:84px 32px 40px;">
+    <div style="text-align:center;max-width:680px;margin:0 auto 14px;">
+      <span class="eyebrow">Unsere Partnerst&auml;dte</span>
+      <h2 style="font-weight:700;font-size:clamp(28px,4vw,40px);line-height:1.1;letter-spacing:-0.015em;color:var(--ink);margin:14px 0 0;">Our two sister cities</h2>
+    </div>
+  </section>
+  <section class="container" style="padding:0 32px 30px;">
+    <div class="grid-2">
+      <div class="card" style="overflow:hidden;">
+        <div style="height:210px;background:var(--cream2);display:flex;align-items:center;justify-content:center;">
+          <img src="assets/schifferstadt-logo.png" alt="Schifferstadt coat of arms" style="height:150px;object-fit:contain;">
+        </div>
+        <div style="padding:26px 26px 28px;">
+          <h3 style="font-weight:700;font-size:25px;color:var(--ink);margin:0 0 4px;">Schifferstadt</h3>
+          <p style="font-size:13px;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted2);font-weight:600;margin:0 0 14px;">Rhineland-Palatinate &middot; Partnered 1982</p>
+          <p style="font-size:15px;line-height:1.62;color:var(--muted);margin:0;">Namesake of Frederick&rsquo;s historic Schifferstadt House, this lively town is known for its famous radishes, its School of Art, and as Germany&rsquo;s center for Olympic wrestling.</p>
+        </div>
+      </div>
+      <div class="card" style="overflow:hidden;">
+        <div style="height:210px;background:var(--cream2);display:flex;align-items:center;justify-content:center;">
+          <img src="assets/morzheim-logo.png" alt="M&ouml;rzheim coat of arms" style="height:150px;object-fit:contain;">
+        </div>
+        <div style="padding:26px 26px 28px;">
+          <h3 style="font-weight:700;font-size:25px;color:var(--ink);margin:0 0 4px;">M&ouml;rzheim</h3>
+          <p style="font-size:13px;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted2);font-weight:600;margin:0 0 14px;">Rhineland-Palatinate &middot; Partnered 1959</p>
+          <p style="font-size:15px;line-height:1.62;color:var(--muted);margin:0;">A hilly village celebrated for its wine and music, M&ouml;rzheim was the home village of John Thomas Schley, one of Frederick&rsquo;s earliest settlers and builder of its first house.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="margin:64px 0 90px;background:var(--red);position:relative;overflow:hidden;">
+    <div style="position:absolute;inset:0;background:repeating-linear-gradient(50deg,rgba(255,255,255,0.03) 0 24px,transparent 24px 48px);"></div>
+    <div class="container-sm" style="position:relative;max-width:920px;padding:74px 32px;text-align:center;">
+      <span style="font-size:12px;letter-spacing:0.26em;text-transform:uppercase;color:#F0CFA0;font-weight:700;">Our Mission</span>
+      <p style="font-family:'Spectral',serif;font-weight:500;font-size:clamp(22px,3vw,28px);line-height:1.45;color:#FBF0E4;margin:20px 0 0;">To promote Frederick&rsquo;s German heritage by facilitating partnerships between our citizens, businesses, schools, and clubs and those of our sister communities &mdash; fostering a continuing relationship from our shared heritage and mutual cultural understanding.</p>
+    </div>
+  </section>
+
+  <section class="container" style="padding:0 32px 90px;">
+    <div style="background:var(--ink);border-radius:18px;padding:54px 48px;display:flex;align-items:center;justify-content:space-between;gap:36px;flex-wrap:wrap;position:relative;overflow:hidden;">
+      <div class="stripe" style="position:absolute;top:0;left:0;right:0;"><div class="s1"></div><div class="s2"></div><div class="s3"></div></div>
+      <div style="max-width:440px;">
+        <h2 style="font-weight:700;font-size:30px;color:#FBF6EC;margin:0 0 10px;">Stay in the loop</h2>
+        <p style="font-size:15.5px;line-height:1.6;color:rgba(251,246,236,0.75);margin:0;">Our newsletter brings event invitations, exchange stories, and news from across the Atlantic.</p>
+      </div>
+      <div class="news-signup" data-form="news-home">
+        <div class="news-done" style="display:none;align-items:center;gap:12px;background:rgba(200,151,47,0.16);border:1px solid rgba(200,151,47,0.5);border-radius:10px;padding:18px 24px;color:var(--lightgold);font-weight:600;font-size:15px;">Danke! You&rsquo;re on the list. &#10003;</div>
+        <form class="news-form" style="display:flex;gap:10px;flex-wrap:wrap;">
+          <input class="field-input news-email" type="email" placeholder="your@email.com" required style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.2);color:#FBF6EC;min-width:240px;width:auto;flex:1;">
+          <button type="submit" class="btn btn-gold">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ABOUT -->
+<div class="page" id="page-about">
+  <section class="page-hero">
+    <div class="container-md page-hero-inner">
+      <div class="divider3"><div class="s1"></div><div class="s2"></div><div class="s3"></div></div>
+      <span class="eyebrow">&Uuml;ber uns &middot; About</span>
+      <h1 style="max-width:760px;">A friendship rooted in shared heritage</h1>
+      <p class="lead" style="max-width:620px;">The Frederick Sister Cities Association has spent four decades nurturing the bonds between Frederick and its German sister cities.</p>
+    </div>
+  </section>
+
+  <section class="container-md grid-story" style="padding:76px 32px 30px;">
+    <div>
+      <span class="eyebrow" style="letter-spacing:0.2em;">Our story</span>
+      <h2 style="font-weight:700;font-size:32px;color:var(--ink);margin:12px 0 18px;">Schifferstadt and M&ouml;rzheim &mdash; your gateway to Germany</h2>
+      <p style="font-size:16px;line-height:1.72;color:var(--text2);margin:0 0 16px;">To promote interaction and cultural exchange between our sister cities and Frederick, an ad hoc committee first formed in town. In 1990, founding members &mdash; supported by Mayor Paul Gordon &mdash; established the Frederick Sister Cities Association.</p>
+      <p style="font-size:16px;line-height:1.72;color:var(--text2);margin:0;">For more than three decades since, the FSCA has actively engaged Frederick with M&ouml;rzheim and Schifferstadt &mdash; through student exchanges, host families, delegations, and cultural celebrations that keep our shared roots alive.</p>
+    </div>
+    <div style="height:340px;border-radius:14px;overflow:hidden;border:1px solid var(--border);">
+      <img src="assets/germany-map.png" alt="Map of Germany showing Schifferstadt and M&ouml;rzheim" style="width:100%;height:100%;object-fit:cover;">
+    </div>
+  </section>
+
+  <section class="container-md" style="padding:50px 32px 90px;">
+    <h2 style="font-weight:700;font-size:30px;color:var(--ink);margin:0 0 8px;text-align:center;">The deeper history</h2>
+    <p style="font-size:15px;color:var(--muted2);text-align:center;margin:0 0 36px;">How two German towns became part of Frederick&rsquo;s story</p>
+    <div class="grid-2">
+      <div class="card" style="padding:30px 30px 32px;">
+        <h3 style="font-weight:700;font-size:23px;color:var(--ink);margin:0 0 4px;">M&ouml;rzheim &middot; 1959</h3>
+        <p style="font-size:13px;letter-spacing:0.04em;text-transform:uppercase;color:var(--red);font-weight:600;margin:0 0 14px;">Frederick&rsquo;s first sister-city tie</p>
+        <p style="font-size:15px;line-height:1.68;color:var(--text2);margin:0;">It began in 1959, when Frederick entered a sister-city agreement with M&ouml;rzheim &mdash; the home village of John Thomas Schley, one of Frederick&rsquo;s earliest settlers, who arrived in 1745 and built the city&rsquo;s first house. The Schley, Shriver, and Delaplaine families lent their personal ties to that first bond.</p>
+      </div>
+      <div class="card" style="padding:30px 30px 32px;">
+        <h3 style="font-weight:700;font-size:23px;color:var(--ink);margin:0 0 4px;">Schifferstadt &middot; 1982</h3>
+        <p style="font-size:13px;letter-spacing:0.04em;text-transform:uppercase;color:var(--red);font-weight:600;margin:0 0 14px;">A name Frederick already knew</p>
+        <p style="font-size:15px;line-height:1.68;color:var(--text2);margin:0;">In 1982, with the encouragement of Mayor Ron Young, Frederick formed an alliance with Schifferstadt &mdash; hometown of the Brunner family, who in 1736 farmed a 303-acre tract they named after their German home. The stone house they built in 1758 still stands today as the Schifferstadt Architectural Museum.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--ink);">
+    <div class="container-md" style="padding:70px 32px 90px;">
+      <div style="text-align:center;margin-bottom:40px;">
+        <span style="font-size:12px;letter-spacing:0.24em;text-transform:uppercase;color:var(--lightgold);font-weight:700;">Gru&szlig;worte &middot; A word from our mayors</span>
+      </div>
+      <div class="grid-2">
+        <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:32px;">
+          <p style="font-family:'Spectral',serif;font-style:italic;font-size:18px;line-height:1.6;color:#FBF6EC;margin:0 0 20px;">&ldquo;The relationships between Frederick and our two sister cities have been instrumental in the development of our respective cultures &mdash; an avenue through which we pass this legacy on to generations to come.&rdquo;</p>
+          <div style="font-size:14px;font-weight:700;color:var(--lightgold);">Mayor Michael O&rsquo;Connor</div>
+          <div style="font-size:13px;color:var(--muted2);">City of Frederick</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:32px;">
+          <p style="font-family:'Spectral',serif;font-style:italic;font-size:18px;line-height:1.6;color:#FBF6EC;margin:0 0 20px;">&ldquo;Nicht nur St&auml;dte sind befreundet, es sind vor allem die Menschen, die miteinander verbunden sind. Bei allem was Menschen unterscheidet gibt es doch viel mehr, was sie verbindet.&rdquo;</p>
+          <div style="font-size:14px;font-weight:700;color:var(--lightgold);">B&uuml;rgermeisterin Ilona Volk</div>
+          <div style="font-size:13px;color:var(--muted2);">Stadt Schifferstadt</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- EVENTS -->
+<div class="page" id="page-events">
+  <section class="page-hero">
+    <div class="container-md page-hero-inner">
+      <div class="divider3"><div class="s1"></div><div class="s2"></div><div class="s3"></div></div>
+      <span class="eyebrow">Veranstaltungen &middot; Events</span>
+      <h1>Gather, celebrate, connect</h1>
+      <p class="lead">From membership meetings to Maifest, our calendar is full of ways to take part in the friendship.</p>
+    </div>
+  </section>
+  <section class="empty-state">
+    <div class="empty-badge">&#9825;</div>
+    <h2 style="font-weight:700;font-size:26px;color:var(--ink);margin:0 0 10px;">No events scheduled right now</h2>
+    <p style="font-size:16px;line-height:1.6;color:var(--muted);">Come back later to view our list of upcoming events.</p>
+  </section>
+</div>
+
+<!-- INVOLVED -->
+<div class="page" id="page-involved">
+  <section class="page-hero">
+    <div class="container-md page-hero-inner">
+      <div class="divider3"><div class="s1"></div><div class="s2"></div><div class="s3"></div></div>
+      <span class="eyebrow">Mitmachen &middot; Get Involved</span>
+      <h1>There&rsquo;s a place for you here</h1>
+      <p class="lead">Become a member and help keep this friendship thriving across the Atlantic.</p>
+    </div>
+  </section>
+
+  <section class="container-md grid-involved" style="padding:70px 32px 90px;">
+    <div>
+      <span class="eyebrow" style="letter-spacing:0.2em;">Membership</span>
+      <h2 style="font-weight:700;font-size:30px;color:var(--ink);margin:12px 0 16px;">Join the Association</h2>
+      <p style="font-size:16px;line-height:1.7;color:var(--text2);margin:0 0 20px;">Membership is open to anyone interested in our work. Annual dues are just <strong style="color:var(--ink);">$20</strong>, payable each January, and your support directly funds exchanges and cultural programs.</p>
+      <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;">
+        <li style="display:flex;gap:11px;font-size:15px;color:var(--text2);"><span style="color:var(--gold);font-weight:700;">&#10003;</span>Invitations to members&rsquo; events and meetings</li>
+        <li style="display:flex;gap:11px;font-size:15px;color:var(--text2);"><span style="color:var(--gold);font-weight:700;">&#10003;</span>Seasonal newsletter and annual report</li>
+        <li style="display:flex;gap:11px;font-size:15px;color:var(--text2);"><span style="color:var(--gold);font-weight:700;">&#10003;</span>A direct hand in our exchange programs</li>
+      </ul>
+    </div>
+    <div class="card" style="padding:36px;box-shadow:0 4px 18px rgba(28,23,20,0.06);">
+      <div class="member-done" style="display:none;text-align:center;padding:30px 10px;">
+        <div style="font-family:'Spectral',serif;font-size:26px;font-weight:700;color:var(--red);margin-bottom:10px;">Willkommen!</div>
+        <p style="font-size:15.5px;line-height:1.6;color:var(--text2);">Thank you for joining the Frederick Sister Cities Association. Our treasurer will be in touch shortly with payment details.</p>
+      </div>
+      <form class="member-form" style="display:flex;flex-direction:column;gap:18px;">
+        <div>
+          <label class="field-label">Full name</label>
+          <input class="field-input m-name" placeholder="Jane Schmidt" required>
+        </div>
+        <div>
+          <label class="field-label">Email address</label>
+          <input class="field-input m-email" type="email" placeholder="jane@email.com" required>
+        </div>
+        <button type="submit" class="btn btn-red" style="margin-top:4px;">Submit Membership</button>
+        <p style="font-size:12.5px;color:var(--muted2);text-align:center;">Our treasurer will follow up with payment details.</p>
+      </form>
+    </div>
+  </section>
+</div>
+
+<!-- GALLERY -->
+<div class="page" id="page-gallery">
+  <section class="page-hero">
+    <div class="container-md page-hero-inner" style="max-width:1180px;">
+      <div class="divider3"><div class="s1"></div><div class="s2"></div><div class="s3"></div></div>
+      <span class="eyebrow">Galerie &middot; Gallery</span>
+      <h1>Four decades in pictures</h1>
+      <p class="lead">Moments from exchanges, celebrations, and visits between our three cities.</p>
+    </div>
+  </section>
+  <section class="empty-state">
+    <div class="empty-badge">&#128247;</div>
+    <h2 style="font-weight:700;font-size:26px;color:var(--ink);margin:0 0 10px;">Our gallery is being refreshed</h2>
+    <p style="font-size:16px;line-height:1.6;color:var(--muted);">Come back later to view photos.</p>
+  </section>
+</div>
+
+<!-- NEWS -->
+<div class="page" id="page-news">
+  <section class="page-hero">
+    <div class="container-md page-hero-inner" style="max-width:1000px;">
+      <div class="divider3"><div class="s1"></div><div class="s2"></div><div class="s3"></div></div>
+      <span class="eyebrow">Mitteilungsblatt &middot; Newsletters</span>
+      <h1>News from across the Atlantic</h1>
+      <p class="lead" style="max-width:580px;">Read our seasonal newsletters &mdash; or subscribe to have each issue delivered to your inbox.</p>
+    </div>
+  </section>
+
+  <section class="container-md" style="max-width:1000px;padding:54px 32px 30px;">
+    <div class="card" style="padding:24px 26px;display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
+      <div style="width:62px;height:78px;border-radius:7px;background:repeating-linear-gradient(45deg,#EDE4D4 0 9px,#E5DAC6 9px 18px);border:1px solid var(--border);flex:none;"></div>
+      <div style="flex:1;min-width:200px;">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:5px;flex-wrap:wrap;">
+          <h3 style="font-weight:700;font-size:21px;color:var(--ink);">December 2025</h3>
+          <span style="font-size:10.5px;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;color:var(--red);background:#FBF1F1;padding:3px 9px;border-radius:99px;">Current Issue</span>
+        </div>
+        <p style="font-size:14.5px;line-height:1.55;color:var(--muted);">Our latest newsletter with event recaps and news from Schifferstadt and M&ouml;rzheim.</p>
+      </div>
+      <a href="assets/fsca-newsletter-dec-2025.pdf" target="_blank" rel="noopener" class="btn btn-red-outline" style="padding:11px 20px;font-size:13.5px;">Read PDF &darr;</a>
+    </div>
+  </section>
+
+  <section class="container-md" style="max-width:1000px;padding:20px 32px 90px;">
+    <div style="background:var(--ink);border-radius:16px;padding:46px 44px;text-align:center;position:relative;overflow:hidden;">
+      <div class="stripe" style="position:absolute;top:0;left:0;right:0;"><div class="s1"></div><div class="s2"></div><div class="s3"></div></div>
+      <h2 style="font-weight:700;font-size:28px;color:#FBF6EC;margin:0 0 10px;">Never miss an issue</h2>
+      <p style="font-size:15.5px;line-height:1.6;color:rgba(251,246,236,0.75);margin:0 auto 24px;max-width:440px;">Subscribe and we&rsquo;ll send each seasonal newsletter straight to your inbox.</p>
+      <div class="news-signup" data-form="news-page" style="display:inline-block;">
+        <div class="news-done" style="display:none;align-items:center;gap:12px;background:rgba(200,151,47,0.16);border:1px solid rgba(200,151,47,0.5);border-radius:10px;padding:16px 24px;color:var(--lightgold);font-weight:600;font-size:15px;">Danke! You&rsquo;re subscribed. &#10003;</div>
+        <form class="news-form" style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
+          <input class="field-input news-email" type="email" placeholder="your@email.com" required style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.2);color:#FBF6EC;min-width:260px;width:auto;flex:1;">
+          <button type="submit" class="btn btn-gold">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- CONTACT -->
+<div class="page" id="page-contact">
+  <section class="page-hero">
+    <div class="container-md page-hero-inner">
+      <div class="divider3"><div class="s1"></div><div class="s2"></div><div class="s3"></div></div>
+      <span class="eyebrow">Kontakt &middot; Contact</span>
+      <h1>We&rsquo;d love to hear from you</h1>
+      <p class="lead">Questions about membership, hosting, or events? Send us a note.</p>
+    </div>
+  </section>
+
+  <section class="container-md grid-contact" style="padding:70px 32px 90px;">
+    <div class="card" style="padding:36px;box-shadow:0 4px 18px rgba(28,23,20,0.06);">
+      <div class="contact-done" style="display:none;text-align:center;padding:34px 10px;">
+        <div style="font-family:'Spectral',serif;font-size:26px;font-weight:700;color:var(--red);margin-bottom:10px;">Vielen Dank!</div>
+        <p style="font-size:15.5px;line-height:1.6;color:var(--text2);">Your message is on its way. We&rsquo;ll be in touch soon.</p>
+      </div>
+      <form class="contact-form" style="display:flex;flex-direction:column;gap:18px;">
+        <div style="display:flex;gap:16px;flex-wrap:wrap;">
+          <div style="flex:1;min-width:140px;">
+            <label class="field-label">Name</label>
+            <input class="field-input c-name" placeholder="Your name" required>
+          </div>
+          <div style="flex:1;min-width:140px;">
+            <label class="field-label">Email</label>
+            <input class="field-input c-email" type="email" placeholder="you@email.com" required>
+          </div>
+        </div>
+        <div>
+          <label class="field-label">Subject</label>
+          <input class="field-input c-subject" placeholder="What can we help with?">
+        </div>
+        <div>
+          <label class="field-label">Message</label>
+          <textarea class="field-input c-msg" rows="5" placeholder="How can we help?" style="resize:vertical;"></textarea>
+        </div>
+        <button type="submit" class="btn btn-red">Send Message</button>
+      </form>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:24px;">
+      <div class="card" style="padding:28px;">
+        <h3 style="font-weight:700;font-size:19px;color:var(--ink);margin:0 0 14px;">Reach us</h3>
+        <div style="display:flex;flex-direction:column;gap:13px;font-size:14.5px;color:var(--text2);">
+          <div><div style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted2);font-weight:700;margin-bottom:2px;">Email</div>info@fredericksistercities.org</div>
+          <div><div style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted2);font-weight:700;margin-bottom:2px;">Social</div><a href="https://www.facebook.com/profile.php?id=61578449474207" target="_blank" rel="noopener" style="color:var(--red);text-decoration:none;font-weight:600;">Follow us on Facebook</a></div>
+        </div>
+      </div>
+      <div style="background:var(--cream2);border:1px solid var(--border);border-radius:14px;padding:28px;">
+        <h3 style="font-weight:700;font-size:19px;color:var(--ink);margin:0 0 8px;">Meetings</h3>
+        <p style="font-size:14.5px;line-height:1.6;color:var(--text2);">Membership meets twice yearly &mdash; in <strong>April</strong> and <strong>October</strong>. The Board of Directors meets every other month. All members are welcome.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+</main>
+
+<footer class="site">
+  <div class="stripe"><div class="s1"></div><div class="s2"></div><div class="s3"></div></div>
+  <div class="container footer-top footer-grid">
+    <div>
+      <div class="footer-brand-row">
+        <img src="assets/fsca-logo.png" alt="FSCA logo">
+        <span style="font-family:'Spectral',serif;font-weight:700;font-size:17px;color:#FBF6EC;">Frederick Sister Cities</span>
+      </div>
+      <p style="font-size:14px;line-height:1.65;color:var(--muted2);max-width:340px;margin:0 0 18px;">Connecting Frederick, Maryland with Schifferstadt and M&ouml;rzheim, Germany since 1982.</p>
+      <div style="font-size:13px;color:var(--muted2);">fredericksistercities.org</div>
+    </div>
+    <div>
+      <div class="footer-col-title">Explore</div>
+      <div class="footer-links">
+        <button data-nav="home">Home</button>
+        <button data-nav="about">About</button>
+        <button data-nav="events">Events</button>
+        <button data-nav="involved">Get Involved</button>
+        <button data-nav="gallery">Gallery</button>
+        <button data-nav="news">Newsletters</button>
+        <button data-nav="contact">Contact</button>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Connect</div>
+      <div class="footer-links">
+        <button data-nav="contact">Contact us</button>
+        <a href="https://www.facebook.com/profile.php?id=61578449474207" target="_blank" rel="noopener">Facebook</a>
+        <button data-nav="involved">Become a member</button>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Frederick Sister Cities Association. A 501(c)(3) nonprofit organization.</span>
+    <span style="font-family:'Spectral',serif;font-style:italic;">St&auml;dtepartnerschaft seit 1982</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var PAGES = ['home','about','events','involved','gallery','news','contact'];
+
+  function mailto(to, subject, body){
+    return 'mailto:' + to + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  }
+
+  function showPage(key){
+    if(PAGES.indexOf(key) === -1) key = 'home';
+    document.querySelectorAll('.page').forEach(function(el){
+      el.classList.toggle('active', el.id === 'page-' + key);
+    });
+    document.querySelectorAll('.navlink[data-nav]').forEach(function(btn){
+      btn.classList.toggle('active', btn.getAttribute('data-nav') === key);
+    });
+    closeMobilePanel();
+    try { window.scrollTo({top:0, behavior:'auto'}); } catch(e){ window.scrollTo(0,0); }
+    if(history.replaceState){ history.replaceState(null, '', '#' + key); }
+  }
+
+  document.querySelectorAll('[data-nav]').forEach(function(el){
+    el.addEventListener('click', function(){ showPage(el.getAttribute('data-nav')); });
+  });
+
+  var hamburgerBtn = document.getElementById('hamburgerBtn');
+  var mobilePanel = document.getElementById('mobilePanel');
+  function closeMobilePanel(){
+    mobilePanel.classList.remove('open');
+    hamburgerBtn.setAttribute('aria-expanded','false');
+  }
+  hamburgerBtn.addEventListener('click', function(){
+    var open = mobilePanel.classList.toggle('open');
+    hamburgerBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+
+  // Newsletter forms (home + news page)
+  document.querySelectorAll('[data-form^="news-"]').forEach(function(wrap){
+    var form = wrap.querySelector('.news-form');
+    var done = wrap.querySelector('.news-done');
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var email = wrap.querySelector('.news-email').value.trim();
+      if(!email) return;
+      window.location.href = mailto('newsletter@fredericksistercities.org', 'Newsletter Signup', 'Please add ' + email + ' to the newsletter list.');
+      form.style.display = 'none';
+      done.style.display = 'flex';
+    });
+  });
+
+  // Membership form
+  var memberForm = document.querySelector('.member-form');
+  if(memberForm){
+    memberForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      var name = document.querySelector('.m-name').value.trim();
+      var email = document.querySelector('.m-email').value.trim();
+      if(!name || !email) return;
+      window.location.href = mailto('treasurer@fredericksistercities.org', 'New Membership Application', 'Name: ' + name + '\nEmail: ' + email);
+      memberForm.style.display = 'none';
+      document.querySelector('.member-done').style.display = 'block';
+    });
+  }
+
+  // Contact form
+  var contactForm = document.querySelector('.contact-form');
+  if(contactForm){
+    contactForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      var name = document.querySelector('.c-name').value.trim();
+      var email = document.querySelector('.c-email').value.trim();
+      var subject = document.querySelector('.c-subject').value.trim() || 'Website inquiry';
+      var msg = document.querySelector('.c-msg').value.trim();
+      if(!name || !email) return;
+      window.location.href = mailto('info@fredericksistercities.org', subject, 'Name: ' + name + '\nEmail: ' + email + '\n\n' + msg);
+      contactForm.style.display = 'none';
+      document.querySelector('.contact-done').style.display = 'block';
+    });
+  }
+
+  // Initial page from hash, default home
+  var initial = (window.location.hash || '').replace('#','');
+  showPage(PAGES.indexOf(initial) !== -1 ? initial : 'home');
+
+  window.addEventListener('hashchange', function(){
+    var key = (window.location.hash || '').replace('#','');
+    showPage(PAGES.indexOf(key) !== -1 ? key : 'home');
+  });
+})();
+</script>
+</body>
+</html>
