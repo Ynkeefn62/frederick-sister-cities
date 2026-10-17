@@ -147,6 +147,22 @@
   .footer-links a,.footer-links button{background:none;border:none;cursor:pointer;padding:0;font-family:'Public Sans',sans-serif;font-size:14.5px;color:#CDBFAC;text-align:left;text-decoration:none;}
   .footer-bottom{max-width:1220px;margin:0 auto;padding:18px 32px 40px;border-top:1px solid rgba(255,255,255,0.08);font-size:12.5px;color:#7E715E;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;}
 
+  /* Homepage announcement banner */
+  .notice-bar{background:var(--gold);color:var(--ink);border-bottom:1px solid rgba(28,23,20,0.12);}
+  .notice-inner{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;padding:12px 32px;text-align:center;}
+  .notice-tag{font-size:11px;letter-spacing:0.16em;text-transform:uppercase;font-weight:700;background:var(--ink);color:var(--lightgold);padding:5px 11px;border-radius:99px;white-space:nowrap;}
+  .notice-text{font-size:14.5px;line-height:1.45;}
+  .notice-link{font-family:'Public Sans',sans-serif;font-size:13.5px;font-weight:700;color:var(--ink);background:transparent;border:1.5px solid var(--ink);border-radius:7px;padding:7px 14px;cursor:pointer;white-space:nowrap;}
+  .notice-link:hover,.notice-link:focus-visible{background:var(--ink);color:var(--lightgold);}
+
+  /* Featured meeting card on Events page */
+  .meeting-card{border:1.5px solid var(--gold);box-shadow:0 4px 18px rgba(28,23,20,0.07);padding:30px 30px 32px;}
+  .meeting-meta{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:14.5px;color:var(--text2);margin:18px 0 22px;}
+  .meeting-meta dt{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted2);font-weight:700;padding-top:3px;}
+  .meeting-meta dd{margin:0;line-height:1.5;}
+  .meeting-agenda{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:10px;font-size:15px;line-height:1.6;color:var(--text2);}
+  .meeting-agenda li::marker{color:var(--red);font-weight:700;}
+
   /* Responsive: tablet and below */
   @media (max-width: 900px){
     .grid-story,.grid-involved,.grid-contact{grid-template-columns:1fr;gap:34px;}
@@ -165,6 +181,9 @@
     section[style],.container,.container-md,.container-sm{}
     .nav-row{padding:12px 20px;}
     .hero-stats{gap:26px;}
+    .notice-inner{padding:12px 20px;gap:10px;}
+    .notice-extra{display:none;}
+    .meeting-card{padding:24px 20px 26px;}
   }
   @media (max-width: 480px){
     .hero h1{font-size:30px;}
@@ -216,6 +235,15 @@
 
 <!-- HOME -->
 <div class="page" id="page-home">
+  <!-- Announcement banner: hides itself automatically on/after data-expires (YYYY-MM-DD, visitor's local time) -->
+  <div class="notice-bar" data-expires="2026-10-26" role="region" aria-label="Announcement">
+    <div class="container notice-inner">
+      <span class="notice-tag">Members Meeting</span>
+      <span class="notice-text">&#127881; <strong>Sunday, Oct 25 at 1:00&nbsp;pm</strong> &middot; C. Burr Artz Public Library<span class="notice-extra"> &middot; Officer elections, annual reports &amp; more</span></span>
+      <button class="notice-link" data-nav="events">Meeting details &rarr;</button>
+    </div>
+  </div>
+
   <section class="hero">
     <div class="hero-overlay"></div>
     <div class="container hero-inner">
@@ -374,6 +402,36 @@
     <h2 style="font-weight:700;font-size:28px;color:var(--ink);text-align:center;margin:10px 0 40px;">Where to find us this fall</h2>
 
     <div style="display:flex;flex-direction:column;gap:16px;">
+      <div class="card meeting-card" id="members-meeting">
+        <div style="display:flex;align-items:flex-start;gap:22px;flex-wrap:wrap;">
+          <div style="flex:none;text-align:center;background:var(--cream2);border:1px solid var(--border);border-radius:10px;padding:10px 16px;min-width:72px;">
+            <div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--red);font-weight:700;">Oct</div>
+            <div style="font-family:'Spectral',serif;font-size:24px;font-weight:700;color:var(--ink);line-height:1;">25</div>
+            <div style="font-size:11px;color:var(--muted2);">2026</div>
+          </div>
+          <div style="flex:1;min-width:220px;">
+            <span class="eyebrow" style="font-size:11px;letter-spacing:0.18em;">Members Meeting</span>
+            <h3 style="font-weight:700;font-size:22px;color:var(--ink);margin:6px 0 6px;">Semi-Annual Members Meeting</h3>
+            <p style="font-size:15px;line-height:1.55;color:var(--muted);margin:0;">Our first semi-annual members meeting as an independent nonprofit! &#127880;&#127881;</p>
+          </div>
+        </div>
+
+        <dl class="meeting-meta">
+          <dt>When</dt>
+          <dd>Sunday, October 25, 2026 &middot; 1:00&nbsp;pm</dd>
+          <dt>Where</dt>
+          <dd>C. Burr Artz Public Library, Programming Room<br>110 E. Patrick St., Frederick, MD 21701 &middot; <a href="https://www.google.com/maps/search/?api=1&amp;query=C.+Burr+Artz+Public+Library+110+E+Patrick+St+Frederick+MD+21701" target="_blank" rel="noopener" style="color:var(--red);font-weight:600;text-decoration:none;">Map &#8599;</a></dd>
+        </dl>
+
+        <div style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink);font-weight:700;margin:0 0 12px;">Agenda</div>
+        <ol class="meeting-agenda">
+          <li>Election of officers for two-year terms</li>
+          <li>Annual reports from the President and Treasurer</li>
+          <li>Vote to raise the membership fee to $25 &mdash; this serves as official notice of the proposed amendment to the Bylaws</li>
+          <li>Welcoming prospective new members &mdash; invitations are also going out to those who expressed interest at our 4th of July and In the Streets events</li>
+        </ol>
+      </div>
+
       <div class="card" style="padding:26px 28px;display:flex;align-items:center;gap:22px;flex-wrap:wrap;">
         <div style="flex:none;text-align:center;background:var(--cream2);border:1px solid var(--border);border-radius:10px;padding:10px 16px;min-width:72px;">
           <div style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--red);font-weight:700;">Sep</div>
@@ -938,6 +996,12 @@
     // Default to the most recent year open
     showYear(yearBtns[0].getAttribute('data-year'));
   }
+
+  // Remove time-limited announcements once their date has passed
+  document.querySelectorAll('[data-expires]').forEach(function(el){
+    var expires = new Date(el.getAttribute('data-expires') + 'T00:00:00');
+    if(!isNaN(expires) && new Date() >= expires){ el.parentNode.removeChild(el); }
+  });
 
   // Initial page from hash, default home
   var initial = (window.location.hash || '').replace('#','');
